@@ -1,26 +1,121 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Signup from './Form/Signup';
+import Signin from './Form/Signin';
 import './App.css';
+import Nav from './Components/Nav/Nav';
+import Welcome from './Components/Welcome/Welcome';
+import Footer from './Components/Footer/Footer'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component{
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      loginDict: [
+        {
+          name: 'sunil',
+          password: 'password'
+        }
+      ]
+    }
+  }
+
+  submitValidation = ({ name, value, preventDefault }) => {
+    preventDefault();
+    const loginDict = this.state.loginDict;
+    const userInput = {
+      name: name,
+      password:value
+    }
+    loginDict.map(stored => (stored.name === userInput.name && stored.password === userInput.password) ?
+      alert('Logging in')
+      : alert('Incorrect username or password'))
+   
+  }
+
+
+
+  render() {
+    
+    const appStyle = {
+      // border: '1px solid white',
+      // display: 'flex',
+      // flexDirection: 'column',
+      // justifyContent: 'center',
+      // margin: 'auto 200px',
+      // minWdth: '100px',
+      // boxShadow: '5px 5px #888888',
+      // padding: '20px'
+    }
+
+    
+
+    const headingStyle = {
+      color: 'white',
+      textShadow: '3px 3px black',
+      textTransform: 'uppercase',
+    }
+  
+    return (
+      <div className='container'>
+
+        <div className="app" style={appStyle}>
+        <div className="App-header">
+            <h1 style= {headingStyle}>HOMEPAGE</h1>
+            <Nav />
+        </div>
+        <div className='main'>
+
+            <div className='form'>
+              <div className='card-head'>New Member</div>
+              <div className='inner'>
+              <Signup
+              name='signup'
+              id='0'   
+              />
+              </div>
+            
+            </div>
+
+            <div className='form welc'>
+            <div className='card-head'>
+            Welcome to This That Page.
+            </div>
+              <div className='inner'>
+              <Welcome/>
+            </div>
+            
+            </div>
+            
+            <div className='form'>
+              <div className='card-head'>MEMBER SIGN IN</div>
+              <div className='inner'>
+                <Signin
+                name='signin'
+                  id='0'
+                  action={this.submitValidation} 
+                />
+            </div>
+              
+            </div>
+
+            
+           
+          
+          </div>
+
+          <div class='footer'>
+            <Footer />
+          </div>
+
+      </div>
+
+      </div>
+      
+    );
+  }
+  
 }
 
 export default App;
