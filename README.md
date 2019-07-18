@@ -42,7 +42,7 @@ git add .
 git commit -m 'your commit'
 git push origin youBranchName
 ```
-***Github Repo***
+***Github Repo***<br>
 1.Click compare & pull request;
 2.Click create pull request;
 3.After pull request review,  click merge pull request
