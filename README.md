@@ -13,7 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Before you work on this project, please take a look at below.
 
-`1.If you work on a new computer`
+`1.If you work on a new computer`<br>
 ***Bash Terminal***
 ```bash
 git clone https://github.com/techworks-pro/ProjectX.git
@@ -22,7 +22,7 @@ npm install
 code .
 npm start
 ```
-`2.If you work on your own computer which has local repo.`
+`2.If you work on your own computer which has local repo.`<br>
 ***Bash Terminal***
 ```bash
 (Update the local directory)
@@ -34,7 +34,7 @@ git pull
 git branch yourBranchName
 git checkout yourBranchName
 ```
-`3.After you finish and test your branch, you want to make a pull request to Github master, make sure you are in the local branch.`
+`3.After you finish and test your branch, you want to make a pull request to Github master, make sure you are in the local branch.`<br>
 ***Bash Terminal***
 ```bash
 git checkout yourBranchName
