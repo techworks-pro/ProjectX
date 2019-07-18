@@ -23,10 +23,10 @@ const footer = () => {
         <div style={style}>
             <p>
                 <span style={styleLeft}>
-                Copyright protected by Sunil Ale
+                Copyright protected :: ProjectX
                 </span> {' '}
                 <span style={styleRight}>
-                    c 2019
+                    2019
                 </span>
             </p>
         </div>
