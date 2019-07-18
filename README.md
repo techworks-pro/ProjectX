@@ -43,10 +43,12 @@ git commit -m 'your commit'
 git push origin youBranchName
 ```
 ***Github Repo***<br>
-1.Click compare & pull request;
-2.Click create pull request;
-3.After pull request review,  click merge pull request
-4.Click confirm;
+<ol>
+<li>Click compare & pull request;</li>
+<li>Click create pull request;</li>
+<li>After pull request review,  click merge pull request;</li>
+<li>Click confirm;</li>
+</ol>
 
 `4.If you and your contributors are working on different files, one of you finish and merge in the Github master, how could the others update their local master and their working branch?`
 
