@@ -1,34 +1,25 @@
-import {AllApps, About} from './Components';
-import React, {Component} from 'react';
-import App from './App';
-import {Route, Switch} from 'react-router-dom';
+import { AllApps, About, Home } from './Components/index';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-class Routes extends Component{
-    constructor(){
+class Routes extends Component {
+    constructor() {
         super()
-        this.state={
+        this.state = {
 
         }
     }
 
-
-    render(){
-        return(
+    render() {
+        return (
             <Switch>
-                
-                <Route path='/AllApps' component={AllApps}/>
-                <Route path='/About' component={About}/>
-                <Route path='/Home' component={App}/>
+                <Route path='/AllApps' component={AllApps} />
+                <Route path='/About' component={About} />
+                <Route path='/Home' component={Home} />
 
-                <Route component={App}/>
-
-
-
+                <Route path='/' component={Home} />
             </Switch>
         )
     }
-
-
 }
-
 export default Routes;

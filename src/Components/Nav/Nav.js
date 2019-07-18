@@ -1,8 +1,9 @@
 import React from 'react';
 import Menu from './Menu';
+import { Link } from 'react-router-dom';
 
 const nav = () => {
-    
+
     const style = {
         listStyleType: 'none',
         display: 'flex',
@@ -13,10 +14,9 @@ const nav = () => {
 
     return (
         <ul style={style}>
-            <Menu name='Home' source='#'/>
-            <Menu name='About' source='#'/>
-            <Menu name='Portfolio' source='#'/>
-            <Menu name='Games' source='#'/>
+            <Link to='/Home'><Menu name='Home' source='#' /></Link>
+            <Link to='/About'><Menu name='About' source='#' /></Link>
+            <Link to='/AllApps'><Menu name='Games' source='#' /></Link>
         </ul>
     )
 }

@@ -6,7 +6,7 @@ import Sources from './Components/Sources/sources';
 import CompApp from './Components/CompApps/compApp'
 
 
-const index = () =>{
+const index = () => {
     const style = {
         display: 'flex',
         justifyContent: 'space-between',
@@ -17,13 +17,13 @@ const index = () =>{
         position: 'relative'
     }
     return (
-        <div style ={style}>
+        <div style={style}>
             <div>
-                <Nav/>
+                <Nav />
                 {/* <button onClick={this.changeApp}/> */}
             </div>
-           <div><Sources/></div>
-           <div> <CompApp/> </div>
+            <div><Sources /></div>
+            <div> <CompApp /> </div>
         </div>
     )
 }
