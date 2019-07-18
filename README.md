@@ -35,14 +35,14 @@ git branch yourBranchName
 git checkout yourBranchName
 ```
 `3.After you finish and test your branch, you want to make a pull request to Github master, make sure you are in the local branch.`<br>
-***Bash Terminal***
+***Step 1:Bash Terminal***
 ```bash
 git checkout yourBranchName
 git add .
 git commit -m 'your commit'
 git push origin youBranchName
 ```
-***Github Repo***<br>
+***Step 2:Github Repo***<br>
 <ol>
 <li>Click compare & pull request;</li>
 <li>Click create pull request;</li>
