@@ -7,14 +7,15 @@ const menu = (props) => {
         color: 'inherit',
         textDecoration: 'none'
     }
-    
-    
-    return <li className='nav-li'>
+
+
+    return (<li className='nav-li'>
         <a href={props.source}
-        style={style}>
-        {props.name }
+            style={style}>
+            {props.name}
         </a>
     </li>
+    )
 }
 
 export default menu;
