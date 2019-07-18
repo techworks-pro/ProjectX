@@ -33,6 +33,7 @@ code .
 git checkout master
 git fetch
 git pull
+npm install
 (Create a new branch)
 git branch yourBranchName
 git checkout yourBranchName
