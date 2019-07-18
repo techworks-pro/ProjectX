@@ -1,0 +1,15 @@
+li {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid white;
+    border-bottom: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+li:hover{
+    background: white;
+    color: black;
+    cursor: pointer;
+    border: 1px solid black
+}
