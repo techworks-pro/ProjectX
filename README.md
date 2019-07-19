@@ -21,6 +21,9 @@ cd ProjectX
 npm install
 code .
 npm start
+(If you want to work on your branch)
+git branch -a(to view all branches including the hidden ones)
+git checkout yourBranchName
 ```
 `2.If you work on your own computer which has local repo.`<br>
 ***Bash Terminal***
@@ -30,6 +33,7 @@ code .
 git checkout master
 git fetch
 git pull
+npm install
 (Create a new branch)
 git branch yourBranchName
 git checkout yourBranchName
