@@ -9,7 +9,8 @@ const nav = () => {
         display: 'flex',
         justifyContent: 'center',
         backgroundColor: '#72A894',
-        boxShadow: '5px 5px'
+        boxShadow: '5px 5px',
+        width:'96%'
     }
 
     return (

@@ -34,19 +34,12 @@ class Home extends Component {
   };
 
   render() {
-    const headingStyle = {
-      color: "white",
-      textShadow: "3px 3px black",
-      textTransform: "uppercase"
-    };
+    
 
     return (
       <div className="container">
         <div className="app">
-          <div className="App-header">
-            <h1 style={headingStyle}>HOMEPAGE</h1>
-            <Nav />
-          </div>
+          
           <div className="main">
             <div className="form">
               <div className="card-head">New Member</div>
