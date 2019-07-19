@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Signup from '../../Form/Signup';
 import Signin from "../../Form/Signin";
 import "../../App.css";
-import Nav from "../Nav/Nav";
 import Welcome from "../Welcome/Welcome";
 import Footer from "../Footer/Footer";
 
