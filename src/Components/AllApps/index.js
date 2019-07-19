@@ -3,7 +3,8 @@ import React from 'react';
 
 import Nav from './Components/Navigation/nav';
 import Sources from './Components/Sources/sources';
-import CompApp from './Components/CompApps/compApp'
+import CompApp from './Components/CompApps/compApp';
+import AppRouter from './AppRouter';
 
 
 const index = () => {
@@ -23,7 +24,7 @@ const index = () => {
                 {/* <button onClick={this.changeApp}/> */}
             </div>
             <div><Sources /></div>
-            <div> <CompApp /> </div>
+            <div> <AppRouter /> </div>
         </div>
     )
 }

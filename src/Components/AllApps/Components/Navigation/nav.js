@@ -1,5 +1,6 @@
 import React from 'react';
 import './nav.css';
+import { Link } from 'react-router-dom';
 
 
 const Nav = () =>{
@@ -9,10 +10,10 @@ const Nav = () =>{
     return (
       <div>
        <ul>
-           <li>Counter</li>
-           <li>ToDo</li>
-           <li>Ticker</li>
-           <li>StopWatch</li>
+          <Link to='/Counter'><li>Counter</li></Link>
+          <Link to='/ToDos'><li>ToDo</li></Link>
+          {/* <Link to='/Counter'><li>Ticker</li></Link>
+          <Link to='/Counter'><li>StopWatch</li></Link> */}
        </ul>
       </div>
       
