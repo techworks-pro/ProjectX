@@ -10,28 +10,37 @@ import { Counter, ToDos } from "./AppExport";
 const index = () => {
   const style = {
     display: "flex",
-    justifyContent: "space-between",
+    // alignItems: "stretched",
+    margin: "0 10rem",
+    padding: "20px",
+    backgroundColor: "grey",
+    position: "relative",
+    flexWrap: "wrap"
+  };
+  const mainStyle = {
+    display: "flex",
     alignItems: "stretched",
     margin: "0 10rem",
     padding: "20px",
     backgroundColor: "grey",
     position: "relative",
-    flexWrap: "wrap",
-    minHeight: ""
+    flexWrap: "wrap"
   };
   return (
     <div style={style}>
-      <div>
+      <div style={{ width: "15%" }}>
         <Nav />
         {/* <button onClick={this.changeApp}/> */}
       </div>
-      <div>
-        <Sources />
-      </div>
-      <div>
-        {" "}
-        <Route path="/AllApps/Counter" component={Counter} />{" "}
-        <Route path="/AllApps/ToDos" component={ToDos} />
+      <div style={mainStyle}>
+        <div>
+          <Sources />
+        </div>
+        <div>
+          {" "}
+          <Route path="/AllApps/Counter" component={Counter} />{" "}
+          <Route path="/AllApps/ToDos" component={ToDos} />
+        </div>
       </div>
     </div>
   );
