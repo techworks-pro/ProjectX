@@ -13,14 +13,15 @@ const index = () => {
     flexWrap: "wrap",
     textAlign: "center",
     flexDirection: "row",
-    justifyContent: "start"
+    justifyContent: "flex-start"
   };
   const mainStyle = {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     padding: "20px",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    alignItems: "center"
   };
   return (
     <div style={style}>
