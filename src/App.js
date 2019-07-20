@@ -1,18 +1,19 @@
-import React from 'react';
-import Routes from './Routes';
-import Nav from './Components/Nav/Nav'
-import Header from './Components/Header/header'
+import React from "react";
+import Routes from "./Routes";
+import Nav from "./Components/Nav/Nav";
+import Header from "./Components/Header/header";
 
-const App = (props) => {
- 
-  
+const app = props => {
+  const style = {
+    background: "#BED7CE"
+  };
   return (
-    <div>
-      <Header/>
+    <div style={style}>
+      <Header />
       <Nav />
       <Routes />
     </div>
-  )
-}
+  );
+};
 
-export default App;
+export default app;

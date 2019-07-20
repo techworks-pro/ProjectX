@@ -1,3 +1,10 @@
-li{
+.allAppNav li {
     list-style-type: none;
+    display: flex
 }
+
+.allAppNav {
+    margin: 10px auto
+}
+
+.allAppNav ul{}

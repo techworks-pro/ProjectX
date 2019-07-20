@@ -1,31 +1,48 @@
-import React from 'react';
+import React from "react";
 // import Input from '../Components/input';
 
-import Nav from './Components/Navigation/nav';
-import Sources from './Components/Sources/sources';
-import CompApp from './Components/CompApps/compApp'
-
+import Nav from "./Components/Navigation/nav";
+import Sources from "./Components/Sources/sources";
+// import AppRouter from "./AppRouter";
+import { Route } from "react-router-dom";
+import { Counter, ToDos } from "./AppExport";
 
 const index = () => {
-    const style = {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'colums',
-        margin: '0 10rem',
-        padding: '10px',
-        backgroundColor: 'grey',
-        position: 'relative'
-    }
-    return (
-        <div style={style}>
-            <div>
-                <Nav />
-                {/* <button onClick={this.changeApp}/> */}
-            </div>
-            <div><Sources /></div>
-            <div> <CompApp /> </div>
+  const style = {
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    width: "100%"
+  };
+  const mainStyle = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: "20px",
+    flexWrap: "wrap",
+    alignItems: "center",
+    width: "60%"
+  };
+  return (
+    <div style={style}>
+      <div style={{}}>
+        <Nav />
+        {/* <button onClick={this.changeApp}/> */}
+      </div>
+      <div style={mainStyle}>
+        <div>
+          <Sources />
         </div>
-    )
-}
+        <div>
+          {" "}
+          <Route path="/AllApps/Counter" component={Counter} />{" "}
+          <Route path="/AllApps/ToDos" component={ToDos} />
+          <Route path="/AllApps/" exact component={ToDos} />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default index;

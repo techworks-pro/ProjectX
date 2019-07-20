@@ -4,7 +4,7 @@ import Highlight from 'react-highlight-js';
 
 const sources = () => {
     return(
-    <div>
+    <>
         <Highlight >{"<p>Hello world</p>"}</Highlight>
         <Highlight language="javascript">
             {`function foo() { 
@@ -13,7 +13,7 @@ const sources = () => {
           }`}
         </Highlight>
 
-    </div>
+    </>
         )
     };
 
