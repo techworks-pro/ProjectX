@@ -1,94 +1,58 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-
 .container {
-  background: #ccc;
-  border: 1px solid black;
-  padding: 20px;
-  display: flex;
+    background: #ccc;
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
 
-  
+
 }
 
-.app{
-  margin: 0 auto;
-  background: #BED7CE;
-  padding: 10px;
-  width: 900px
+.app {
+    margin: 0 auto;
+    background: #BED7CE;
+    padding: 10px;
+    width: 900px
 }
 
-.app-header h4{
-  text-align: center
+.app-header h4 {
+    text-align: center
 }
 
-.form{
-  max-width: 300px;
-  border: 1px solid white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto 20px;
-  min-width: 100px;
-  box-shadow: 5px 5px #888888;
-  /* padding: 20px; */
-  text-align: center
+.form {
+    max-width: 300px;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto 20px;
+    min-width: 100px;
+    box-shadow: 5px 5px #888888;
+    text-align: center
 }
 
 .inner {
-  padding: 15px
+    padding: 15px
 }
 
-.main .card-head{
-  text-transform: uppercase;
-  padding: 10px;
-  margin: 0px;
-  background: #72A894;
-  border: 1px solid white
+.main .card-head {
+    text-transform: uppercase;
+    padding: 10px;
+    margin: 0px;
+    background: #72A894;
+    border: 1px solid white
 }
 
-.main{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; 
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
 }
 
-.welc{
-  min-width: 300px
+.welc {
+    min-width: 300px
 }
 
-.footer{
-  padding-top: 20px;
+.footer {
+    padding-top: 20px;
 }

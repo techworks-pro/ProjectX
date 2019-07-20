@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Signup from '../../Form/Signup';
+import Signup from "../../Form/Signup";
 import Signin from "../../Form/Signin";
 import "../../App.css";
 import Welcome from "../Welcome/Welcome";
@@ -31,19 +31,16 @@ class Home extends Component {
         : alert("Incorrect username or password")
     );
   };
-
+  newSignup = () => {};
   render() {
-    
-
     return (
       <div className="container">
         <div className="app">
-          
           <div className="main">
             <div className="form">
               <div className="card-head">New Member</div>
               <div className="inner">
-                <Signup name="signup" id="0" />
+                <Signup name="signup" id="signup" action={this.newSignup} />
               </div>
             </div>
 
@@ -57,7 +54,11 @@ class Home extends Component {
             <div className="form">
               <div className="card-head">MEMBER SIGN IN</div>
               <div className="inner">
-                <Signin name="signin" id="0" action={this.submitValidation} />
+                <Signin
+                  name="signin"
+                  id="signin"
+                  action={this.submitValidation}
+                />
               </div>
             </div>
           </div>

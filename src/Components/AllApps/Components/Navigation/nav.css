@@ -1,3 +1,4 @@
-li{
+.allAppNav li {
     list-style-type: none;
+    display: flex
 }
