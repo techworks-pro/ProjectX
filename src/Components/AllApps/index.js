@@ -11,9 +11,9 @@ const index = () => {
   const style = {
     display: "flex",
     flexWrap: "wrap",
-    textAlign: "center",
     flexDirection: "row",
-    justifyContent: "flex-start"
+    justifyContent: "flex-start",
+    width: "100%"
   };
   const mainStyle = {
     display: "flex",
@@ -21,7 +21,8 @@ const index = () => {
     justifyContent: "space-between",
     padding: "20px",
     flexWrap: "wrap",
-    alignItems: "center"
+    alignItems: "center",
+    width: "60%"
   };
   return (
     <div style={style}>
