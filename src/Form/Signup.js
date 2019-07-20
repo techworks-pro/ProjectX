@@ -2,13 +2,13 @@ import React from "react";
 import Field from "./field/field";
 
 const signupForm = props => {
-  let signupID = 0;
-  signupID++;
+  let signupId = 0;
+  signupId++;
   return (
     <form style={props.style}>
       Username <br />
       <Field
-        id={signupID++}
+        id={props.id + signupId++}
         name="username"
         type="text"
         placeholder="ex. john.smith"
@@ -16,18 +16,23 @@ const signupForm = props => {
       <br />
       Password <br />{" "}
       <Field
-        id={signupID++}
+        id={props.id + signupId++}
         name="password"
         type="password"
         placeholder="*****"
       />{" "}
       <br />
       First Name <br />{" "}
-      <Field id={signupID++} name="name" type="text" placeholder="John" />{" "}
+      <Field
+        id={props.id + signupId++}
+        name="name"
+        type="text"
+        placeholder="John"
+      />{" "}
       <br />
       Last Name <br />{" "}
       <Field
-        id={signupID++}
+        id={props.id + signupId++}
         name="name"
         type="text"
         placeholder="Smith"
@@ -35,7 +40,7 @@ const signupForm = props => {
       <br />
       Email <br />{" "}
       <Field
-        id={signupID++}
+        id={props.id + signupId++}
         name="email"
         type="email"
         placeholder="ex. sometext@email.com"
@@ -43,13 +48,18 @@ const signupForm = props => {
       <br />
       Phone <br />{" "}
       <Field
-        id={signupID++}
+        id={props.id + signupId++}
         name="phone"
         type="number"
         placeholder="555 555 5555"
       />{" "}
       <br />
-      <Field id={signupID++} name="submit" type="submit" placeholder="" />
+      <Field
+        id={props.id + signupId++}
+        name="submit"
+        type="submit"
+        placeholder=""
+      />
     </form>
   );
 };

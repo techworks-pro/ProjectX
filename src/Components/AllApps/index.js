@@ -21,7 +21,6 @@ const index = () => {
     justifyContent: "space-between",
     padding: "20px",
     flexWrap: "wrap",
-    alignItems: "center",
     width: "60%"
   };
   return (

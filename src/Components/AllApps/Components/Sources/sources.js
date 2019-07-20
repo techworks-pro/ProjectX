@@ -1,21 +1,19 @@
-import React from 'react';
-import Highlight from 'react-highlight-js';
+import React from "react";
+import Highlight from "react-highlight-js";
 // import '../../../../../node_modules/highlight.js/styles/atom-one-dark.css';
 
 const sources = () => {
-    return(
+  return (
     <>
-        <Highlight >{"<p>Hello world</p>"}</Highlight>
-        <Highlight language="javascript">
-            {`function foo() { 
+      <Highlight>{"<p>Hello world</p>"}</Highlight>
+      <Highlight language="javascript">
+        {`function foo() { 
           let i = 0;
           return 'bar' 
           }`}
-        </Highlight>
-
+      </Highlight>
     </>
-        )
-    };
+  );
+};
 
 export default sources;
-
