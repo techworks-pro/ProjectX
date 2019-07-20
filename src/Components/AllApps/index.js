@@ -10,25 +10,21 @@ import { Counter, ToDos } from "./AppExport";
 const index = () => {
   const style = {
     display: "flex",
-    // alignItems: "stretched",
-    margin: "0 10rem",
-    padding: "20px",
-    backgroundColor: "grey",
-    position: "relative",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    textAlign: "center",
+    flexDirection: "row",
+    justifyContent: "start"
   };
   const mainStyle = {
     display: "flex",
-    alignItems: "stretched",
-    margin: "0 10rem",
+    flexDirection: "row",
+    justifyContent: "space-around",
     padding: "20px",
-    backgroundColor: "grey",
-    position: "relative",
     flexWrap: "wrap"
   };
   return (
     <div style={style}>
-      <div style={{ width: "15%" }}>
+      <div style={{}}>
         <Nav />
         {/* <button onClick={this.changeApp}/> */}
       </div>
@@ -40,6 +36,7 @@ const index = () => {
           {" "}
           <Route path="/AllApps/Counter" component={Counter} />{" "}
           <Route path="/AllApps/ToDos" component={ToDos} />
+          <Route path="/AllApps/" exact component={ToDos} />
         </div>
       </div>
     </div>
