@@ -1,4 +1,4 @@
-import { Home, About, Game} from "./Components/index";
+import { Home, About, Game, Quizzes } from "./Components/index";
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
@@ -14,6 +14,7 @@ class Routes extends Component {
         <Route path="/Games" component={Game} />
         <Route path="/About" exact component={About} />
         <Route path="/Home" exact component={Home} />
+        <Route path="/Quizzes" exact component={Quizzes} />
         <Route path="/" exact component={Home} />
       </Switch>
     );
