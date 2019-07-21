@@ -1,16 +1,16 @@
 import React from "react";
 import Field from "./field/field";
 
-const signin = ({ style, action, id }) => {
-  let signinId = 0;
-  signinId++;
+const signin = (style, action) => {
+  let id = 0;
+  id++;
   return (
     <>
       <form style={style} onSubmit={action}>
         Username
         <br />
         <Field
-          id={id + signinId++}
+          id={id++}
           name="username"
           type="text"
           placeholder="ex. john.smith"
@@ -18,19 +18,9 @@ const signin = ({ style, action, id }) => {
         <br />
         Password
         <br />
-        <Field
-          id={id + signinId++}
-          name="password"
-          type="password"
-          placeholder="******"
-        />
+        <Field id={id++} name="password" type="password" placeholder="******" />
         <br />
-        <Field
-          id={id + signinId++}
-          name="submit"
-          type="submit"
-          placeholder=""
-        />
+        <Field id={id++} name="submit" type="submit" placeholder="" />
       </form>
     </>
   );

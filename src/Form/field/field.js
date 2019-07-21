@@ -5,8 +5,6 @@ const field = function({ id, name, type, placeholder, action }) {
     padding: "5px",
     margin: "10px 10px 10px 0"
   };
-  let signin = 0;
-  signin++;
   return (
     <input
       id={id}

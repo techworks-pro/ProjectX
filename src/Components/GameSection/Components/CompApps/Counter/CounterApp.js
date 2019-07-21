@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./counterApp.css";
+import "./CounterApp.css";
 
 class counterApp extends Component {
   constructor() {
@@ -38,7 +38,7 @@ class counterApp extends Component {
   render() {
     console.log("this is line number 13", this.state.counter);
     return (
-      <div className="appContainer">
+      <div className="container">
         <div className="navbar">
           <h4>Counter.JS</h4>
         </div>
