@@ -19,7 +19,7 @@ const index = () => {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    padding: "20px",
+    margin: "20px",
     flexWrap: "wrap",
     width: "60%"
   };

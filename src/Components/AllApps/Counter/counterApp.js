@@ -38,7 +38,7 @@ class counterApp extends Component {
   render() {
     console.log("this is line number 13", this.state.counter);
     return (
-      <div className="container">
+      <div className="appContainer">
         <div className="navbar">
           <h4>Counter.JS</h4>
         </div>
