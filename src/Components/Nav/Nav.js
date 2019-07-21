@@ -20,7 +20,7 @@ const nav = () => {
       <Link to="/About">
         <Menu name="About" source="#" />
       </Link>
-      <Link to="/AllApps">
+      <Link to="/Games">
         <Menu name="Games" source="#" />
       </Link>
     </ul>
