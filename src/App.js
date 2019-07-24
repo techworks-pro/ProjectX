@@ -13,5 +13,5 @@ const app = props => {
     </div>
   );
 };
-
+//This file will be imported in index.js
 export default app;

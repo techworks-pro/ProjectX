@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import './game.css';
 import SideNav from "./Components/SideNav";
-import { Counter, ToDos } from "./Components/CompApps";
+import { Counter, ToDos } from "./Components/AppsContent";
 
 const Game = () => {
 
