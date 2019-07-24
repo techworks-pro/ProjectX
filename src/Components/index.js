@@ -1,12 +1,4 @@
-export {
-    default as AllApps
-}
-from "./AllApps";
-export {
-    default as About
-}
-from "./About/about";
-export {
-    default as Home
-}
-from "./Home/Home";
+//This file will be imported in Routes.js
+export {default as GameSection}from "./GameSection";
+export {default as AboutSection}from "./AboutSection";
+export {default as HomeSection}from "./HomeSection";

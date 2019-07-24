@@ -1,0 +1,40 @@
+.todos-container {
+    background-color: darkgray;
+    height: 94%;
+    width: 90%;
+    padding: 20px;
+    font-size: 1.2rem;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .main-form {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    font-size: 1.2rem;
+  }
+  
+  input {
+    font-size: 1.2rem;
+  }
+  
+  .one-task {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .todos-one-task{
+      color:black;
+      background-color: white;
+      margin:0;
+  }
+
+  #todos-ol{
+    padding: 0;
+  }

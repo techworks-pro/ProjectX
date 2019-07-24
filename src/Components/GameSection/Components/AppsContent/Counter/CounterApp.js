@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./counterApp.css";
+import "./CounterApp.css";
 
 class counterApp extends Component {
   constructor() {

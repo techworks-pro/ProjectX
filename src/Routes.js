@@ -1,4 +1,4 @@
-import { AllApps, About, Home } from "./Components/index";
+import { HomeSection, AboutSection, GameSection} from "./Components/index";
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
@@ -11,12 +11,13 @@ class Routes extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/AllApps" component={AllApps} />
-        <Route path="/About" exact component={About} />
-        <Route path="/Home" exact component={Home} />
-        <Route path="/" exact component={Home} />
+        <Route path="/Games" component={GameSection} />
+        <Route path="/About" exact component={AboutSection} />
+        <Route path="/Home" exact component={HomeSection} />
+        <Route path="/" exact component={HomeSection} />
       </Switch>
     );
   }
 }
+//This file will be imported in App.js
 export default Routes;

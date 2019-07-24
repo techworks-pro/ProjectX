@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Signup from "../../Form/Signup";
 import Signin from "../../Form/Signin";
-import "../../App.css";
+import "./Home.css";
 import Welcome from "../Welcome/Welcome";
 import Footer from "../Footer/Footer";
 
@@ -63,7 +63,7 @@ class Home extends Component {
             </div>
           </div>
 
-          <div class="footer">
+          <div className="footer">
             <Footer />
           </div>
         </div>
