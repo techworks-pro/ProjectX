@@ -15,6 +15,7 @@ $ cd server
 $ npm install
 $ nodemon server.js
 ```
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `Dependencies`
 
@@ -33,9 +34,6 @@ Folder:client
 - react-router-dom
 - react-highlight-js
 - axios
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Before you work on this project, please take a look at the instructional steps below.
 
