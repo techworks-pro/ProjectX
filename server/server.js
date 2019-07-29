@@ -1,7 +1,8 @@
 //Create a server using Express
 const express = require("express");
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
+const mysql = require('mysql');
 
 //Middleware part
 app.use(express.json());
@@ -18,3 +19,28 @@ const server = app.listen(port, () => {
     `===========================================>Port ${port} is listening now.`
   );
 });
+
+const mysqlConnection = mysql.createConnection({
+  host: 'us-cdbr-iron-east-02.cleardb.net',
+  user: "b51a3d0daa4770",
+  password: '43d9010d',
+  multipleStatements: true,
+  database: 'heroku_1b3f9d32c7d74e0'
+})
+
+mysqlConnection.connect(err=>{
+  if(!err) console.log('DB connection succeeded!');
+  else console.log('DB Connection Error: '+ JSON.stringify(err, undefined, 2))
+  
+})
+
+app.get('/test', (req, res)=>{
+  mysqlConnection.query('SELECT * FROM testtable',
+  (err, rows, field)=>{
+    if(!err){
+      res.send(rows);
+      console.log(rows);
+    }
+    else(console.log(err))
+  })
+})
