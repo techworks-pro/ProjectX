@@ -23,6 +23,9 @@ const nav = () => {
       <Link to="/Games">
         <Menu name="Games" source="#" />
       </Link>
+      <Link to="/Quizs">
+        <Menu name="Quizs" source="#" />
+      </Link>
     </ul>
   );
 };

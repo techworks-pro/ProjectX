@@ -1,37 +1,32 @@
-let example = [
-  { id: 1, name: "This message" },
-  { id: 2, name: "is from" },
-  { id: 3, name: "'./server/api/example.js'" },
-  { id: 4, name: "in the backend." }
-];
+let quizs = "This quiz is from ./server/api/quizs.js";
 
 const router = require("express").Router();
 
-//This is a get request, the route is '/api/example'
+//This is a get request, the route is '/api/quizs'
 //For querying all items.
-router.get("/", (req, res) => res.send(example));
+router.get("/", (req, res) => res.send(quizs));
 
-//This is a get request, the route is '/api/example/:id'
+//This is a get request, the route is '/api/quizs/:id'
 //For querying an item by the argument from url.
 router.get("/:id", (req, res) => {
   //Type of 'req.params.id' is string.
   let id = Number(req.params.id);
-  for (let i = 0; i < example.length; i++) {
-    if (example[i].id === id) res.send(example[i]);
+  for (let i = 0; i < quizs.length; i++) {
+    if (quizs[i].id === id) res.send(quizs[i]);
   }
 });
 
-//This is a post request, the route is '/api/example'
+//This is a post request, the route is '/api/quizs'
 //For adding a new item.
 //should get a prameter call name which is from request.
 router.post("/", (req, res) => {
-  let newId = example.length + 1;
+  let newId = quizs.length + 1;
   let newExample = {
     id: newId,
     name: req.body.name
   };
-  example.push(newExample);
-  res.send(example);
+  quizs.push(newExample);
+  res.send(quizs);
 });
 
 //This is a put request, the route is '/api/students'
