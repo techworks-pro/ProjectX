@@ -1,1 +1,0 @@
-web : cd client/build && node index.html
