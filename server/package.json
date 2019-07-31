@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
-    "heroku-postbuild": "cd ../client && npm install && npm run build"
+    "server": "nodemon server.js"
   },
   "author": "Donghao Wu",
   "license": "MIT",

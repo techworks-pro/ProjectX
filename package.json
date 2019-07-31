@@ -5,8 +5,10 @@
   "main": "/client/src/index.js",
   "scripts": {
     "client": "cd client && npm start",
-    "server": "cd server && npm run server",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "server": "cd server && npm start",
+    "serverDev": "cd server && npm run server",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run serverDev\" \"npm run client\""
   },
   "repository": {
     "type": "git",
