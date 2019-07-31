@@ -1,1 +1,1 @@
-web :cd client/src && node index.js
+web : npm start
