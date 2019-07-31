@@ -20,6 +20,11 @@ const server = app.listen(port, () => {
   );
 });
 
+// Express only serves static assets in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("../client/build"));
+}
+
 const mysqlConnection = mysql.createConnection({
   host: 'us-cdbr-iron-east-02.cleardb.net',
   user: "b51a3d0daa4770",
