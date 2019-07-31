@@ -1,0 +1,1 @@
+web :cd client/src && node index.js
