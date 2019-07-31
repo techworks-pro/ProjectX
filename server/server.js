@@ -45,7 +45,7 @@ app.get('/quizs', (req, res)=>{
   })
 })
 
-
+ 
 //Add an new item without input QuizID
 app.post('/quizs', (req, res) => {
   let emp = req.body;
