@@ -14,7 +14,7 @@ class Routes extends Component {
         <Route path="/Games" component={Game} />
         <Route path="/About" exact component={About} />
         <Route path="/Home" exact component={Home} />
-        <Route path="/Quizzes" exact component={Quizzes} />
+        <Route path="/quizs" exact component={Quizzes} />
         <Route path="/" exact component={Home} />
       </Switch>
     );

@@ -2,4 +2,4 @@
 export { default as Game } from "./GameSection";
 export { default as About } from "./AboutSection";
 export { default as Home } from "./HomeSection";
-export { default as Quizzes } from "./QuizzesSection/Quizzes";
+export { default as Quizzes } from "./QuizSection";
