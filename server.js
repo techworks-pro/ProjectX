@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 4000;
+const mysql = require('mysql');
 
 
 //Middleware part
@@ -24,8 +25,27 @@ const server = app.listen(port, () => {
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
-  app.get('*', (req, res)=> {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  })
+  
+  // app.get('*', (req, res)=> {
+  //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  // })
 }
 
+
+
+const mysqlConnection = mysql.createPool({ // mysql.createConnectection
+  host: 'us-cdbr-iron-east-02.cleardb.net',
+  user: "b51a3d0daa4770",
+  password: '43d9010d',
+  multipleStatements: true,
+  database: 'heroku_1b3f9d32c7d74e0'
+})
+
+mysqlConnection.getConnection(err=>{ // mysqlConnection.connect
+  if(!err) console.log('DB connection succeeded!');
+  else console.log('DB Connection Error: '+ JSON.stringify(err, undefined, 2))
+  
+})
+
+
+module.export = mysqlConnection;

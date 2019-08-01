@@ -1,20 +1,8 @@
 // let quizs = "This quiz is from ./server/api/quizs.js";
 
 const router = require("express").Router();
-const mysql = require('mysql');
-const mysqlConnection = mysql.createPool({
-  host: 'us-cdbr-iron-east-02.cleardb.net',
-  user: "b51a3d0daa4770",
-  password: '43d9010d',
-  multipleStatements: true,
-  database: 'heroku_1b3f9d32c7d74e0'
-})
 
-mysqlConnection.getConnection(err=>{
-  if(!err) console.log('DB connection succeeded!');
-  else console.log('DB Connection Error: '+ JSON.stringify(err, undefined, 2))
-  
-})
+const mysqlConnection = require('../server')
 
 router.get('/', (req, res)=>{
   mysqlConnection.query('SELECT * FROM quiz',

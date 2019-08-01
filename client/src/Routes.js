@@ -15,8 +15,8 @@ class Routes extends Component {
         <Route path="/About" exact component={About} />
         <Route path="/Home" exact component={Home} />
         <Route path="/quizs" exact component={Quizzes} />
-        {/* <Route path="/" exact component={Home} /> */}
-        <Route component={()=>'404 not found'}/>
+        <Route path="/" exact component={Home} />
+        {/* <Route component={()=>'404 not found'}/> */}
       </Switch>
     );
   }
