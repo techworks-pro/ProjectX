@@ -13,14 +13,13 @@ class Quiz extends Component {
   async componentDidMount() {
     try {
       //axios build in json()
-      const res = await axios.get(`/quizs`);
-      console.log('consoling res', res);
+      const res = await axios.get(`/api/quizs`);
       this.setState({
         questions: res.data,
         isLoaded: true
       });
     } catch (err) {
-      console.log(`Got error when fetching data,the error is ${err}`);
+      console.log(`Got error when fetching data, the error is ${err}`);
     }
   }
 
