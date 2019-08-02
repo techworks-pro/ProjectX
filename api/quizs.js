@@ -63,32 +63,32 @@ module.exports = router;
 
 
 
-//This is a put request, the route is '/api/students'
-//For updating a new item. should get a prameter call id which is from url
-router.put("/:idDFSADFSF", (req, res) => {
-  //Type of 'req.params.id' is string
-  let id = Number(req.params.id);
-  let studentIndex = 0;
-  let findId = false;
-  for (let i = 0; i < students.length; i++) {
-    if (students[i].id === id) {
-      students[i].name = req.body.name;
-      studentIndex = i;
-      findId = true;
-      break;
-    }
-  }
-  if (findId) res.send(students[studentIndex]);
-  else res.send(`Cannot find the id.`);
-});
+// //This is a put request, the route is '/api/students'
+// //For updating a new item. should get a prameter call id which is from url
+// router.put("/:idDFSADFSF", (req, res) => {
+//   //Type of 'req.params.id' is string
+//   let id = Number(req.params.id);
+//   let studentIndex = 0;
+//   let findId = false;
+//   for (let i = 0; i < students.length; i++) {
+//     if (students[i].id === id) {
+//       students[i].name = req.body.name;
+//       studentIndex = i;
+//       findId = true;
+//       break;
+//     }
+//   }
+//   if (findId) res.send(students[studentIndex]);
+//   else res.send(`Cannot find the id.`);
+// });
 
-//This is a post request, the route is '/api/students'
-//For deleting a new item.
-//should get a prameter call id which is from request
-router.delete("/:idADFSDFDSF", (req, res) => {
-  //Type of 'req.params.id' is string
-  let id = Number(req.params.id);
-  students = students.filter(el => el.id !== id);
-  res.send(students);
-});
+// //This is a post request, the route is '/api/students'
+// //For deleting a new item.
+// //should get a prameter call id which is from request
+// router.delete("/:idADFSDFDSF", (req, res) => {
+//   //Type of 'req.params.id' is string
+//   let id = Number(req.params.id);
+//   students = students.filter(el => el.id !== id);
+//   res.send(students);
+// });
 
