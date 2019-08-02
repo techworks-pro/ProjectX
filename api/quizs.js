@@ -4,7 +4,9 @@ const router = require("express").Router();
 
 const mysqlConnection = require('../server')
 
-router.get('/', (req, res)=>{
+
+router.get('/', (req, res) => {
+  
   mysqlConnection.query('SELECT * FROM quiz',
   (err, rows, field)=>{
     if(!err){

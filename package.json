@@ -7,8 +7,10 @@
     "client": "cd client && npm start",
     "server": "node server",
     "serverDev": "nodemon server",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "dev": "concurrently \"npm run serverDev\" \"npm run client\""
+    "startT": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "dev": "concurrently \"npm run serverDev\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
