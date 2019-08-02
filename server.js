@@ -42,9 +42,7 @@ mysqlConnection.getConnection(err=>{ // mysqlConnection.connect
 //   );
 // });
 
-app.get('/', (request, response) => {
-  response.send('Hello from Express!')
-})
+
 
 // app.listen(port, (err) => {
 //   if (err) {
