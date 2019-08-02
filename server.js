@@ -72,10 +72,10 @@ app.use("/api", require("./api"));
 //   );
 // });
 
-
-app.get('/', (request, response) => {
-  response.send('Hello from Express!')
-})
+// this one can override anything from running react
+// app.get('/', (request, response) => {
+//   response.send('Hello from Express!')
+// })
 
 // app.use(function (req, res, next) {
 //   res.status(404).send(() => redirect(("Sorry can't find that! Here is what you can do now! if it is a try reloading just ")))
@@ -114,6 +114,14 @@ if (process.env.NODE_ENV === "production") {
   app.get('*', (req, res)=> {
     res.sendFile(path.resolve(__dirname, 'client', 'build'))
   })
+
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message, 
+        error: err
+    });
+ });
 }
 
 
