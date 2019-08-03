@@ -8,27 +8,26 @@ class Quiz extends Component {
     this.state = {
       questions: [],
       questionSet: [],
-      questionNum: 1,
-      selectedOption: '',
+      questionNum: 0,
       score: 0,
       isLoaded: false
     };
   }
   selectOption = event => {
-    this.setState({ selectedOption: event.target.name });
-    this.nextQuestion();
-  };
+    console.log(event.target.name);
+    console.log(this.state.questions[this.state.questionNum].answer);
 
-  nextQuestion = event => {
     if (
-      this.state.selectedOption ==
-      this.state.questions[this.state.questionNum].answer
+      String(event.target.name) ===
+      String(this.state.questions[this.state.questionNum].answer)
     ) {
       console.log('right answer!');
       this.setState({ score: this.state.score + 1 });
     }
-    console.log('score: ', this.state.score);
+    this.nextQuestion();
+  };
 
+  nextQuestion = event => {
     this.setState({ questionNum: this.state.questionNum + 1 });
   };
 
@@ -90,7 +89,10 @@ class Quiz extends Component {
           </div>
         </div>
       ) : (
-        <div className='QuizEnd'>end of quiz!</div>
+        <div className='QuizEnd'>
+          End of Quiz!
+          <div className='FinalScore'> Your Score is : {this.state.score}</div>
+        </div>
       )
     ) : (
       <div>Loading...</div>
