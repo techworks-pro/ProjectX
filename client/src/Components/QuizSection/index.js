@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 class Quiz extends Component {
   constructor() {
@@ -43,10 +44,15 @@ class Quiz extends Component {
           {el.option4}
           </li>
 
-          </div>
-         
           
-      })}</div>
+         </div>
+          
+      })}
+      
+        <div>
+          <button className="btn btn-primary"><Link to="/Quiz/Add-Quiz">Add Quiz</Link></button>
+        </div>
+      </div>
     ) : (
       <div>Loading...</div>
     );
