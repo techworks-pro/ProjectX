@@ -11,7 +11,7 @@ const field = function({ id, name, type, placeholder, action }) {
       name={name}
       type={type}
       placeholder={placeholder}
-      style={style}
+      className = "form-control"
       onClick={action}
     />
   );

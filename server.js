@@ -5,7 +5,7 @@ const port = process.env.PORT || 4000;
 const mysql = require('mysql');
 
 
-const mysqlConnection = mysql.createPool({ // mysql.createConnectection
+const mysqlConnection = mysql.createPool({ // mysql.createConnection //one
   host: 'us-cdbr-iron-east-02.cleardb.net',
   user: "b51a3d0daa4770",
   password: '43d9010d',
@@ -33,15 +33,6 @@ module.exports = mysqlConnection;
 app.use("/api", require("./api"));
 
 
-app.get('/', function (req, res, next) {
-  fs.readFile('/file-does-not-exist', function (err, data) {
-    if (err) {
-      next( err) // Pass errors to Express.
-    } else {
-      res.send("page not found",data)
-    }
-  })
-})
 
 
 app.listen(port, (err) => {
@@ -90,6 +81,7 @@ if (process.env.NODE_ENV === "production") {
 //         res.writeHead(200, {'content-type': 'text/html'});
 //         var rs = fs.createReadStream(()=>{return "homepage"});
 //         util.pump(rs, res);
+//         res.status(404).redirect('sdfa')
 //     } else {
 //         res.writeHead(404, {'content-type': 'text/html'});
 //       var rs = fs.createReadStream(() => { return "404 error. page not found" });
@@ -127,4 +119,14 @@ if (process.env.NODE_ENV === "production") {
 // app.use(function (req, res, next) {
 //   res.status(404).send(() => redirect(("Sorry can't find that! Here is what you can do now! if it is a try reloading just ")))
 //   // res.status(404).redirect('http://' + req.headers.host + req.url)
+// })
+
+// app.get('/', function (req, res, next) {
+//   fs.readFile('/file-does-not-exist', function (err, data) {
+//     if (err) {
+//       next( err) // Pass errors to Express.
+//     } else {
+//       res.send("page not found",data)
+//     }
+//   })
 // })
