@@ -7,7 +7,7 @@ import './App.css';
 
 const app = props => {
   return (
-      <div class='container-fluid' id = "main_container">
+      <div className='container-fluid' id = "main_container">
     
 
       <Header />
