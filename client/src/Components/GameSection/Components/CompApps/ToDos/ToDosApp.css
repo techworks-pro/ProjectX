@@ -1,0 +1,43 @@
+.todos-container {
+    background-color: darkgray;
+    height: 94%;
+    width: 90%;
+    padding: 20px;
+    font-size: 1.2rem;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  
+  button {
+    margin-left: 10px;
+    font-size: 1.2rem;
+  }
+  
+  input {
+    margin-left: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .one-task {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  
+  .main-form {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .todos-one-task{
+      color:black;
+      background-color: white;
+      margin:0;
+  }
+
+  #todo-ul{
+      padding: 0;
+  }

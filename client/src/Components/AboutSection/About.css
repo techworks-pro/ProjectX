@@ -1,0 +1,28 @@
+.AboutContainer {
+    padding-top: 20px;
+    background-image: url('Programming.jpg');
+  }
+  .Intro {
+    font-size: 25px;
+    font-weight: bolder;
+    opacity: 2;
+  }
+  .Intro-bg {
+    background-color: rgb(122, 179, 179);
+    opacity: 0.75;
+    font-weight: bold;
+  }
+  .Walkthrough {
+    background-color: rgb(122, 179, 179);
+    opacity: 0.75;
+    padding-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .Dependencies {
+    background-color: rgb(122, 179, 179);
+    opacity: 0.75;
+    padding-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
