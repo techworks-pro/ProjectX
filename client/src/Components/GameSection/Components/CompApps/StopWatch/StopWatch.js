@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 
-class App extends Component {
+class Stopwatch extends Component {
   constructor() {
     super();
     this.state = {
@@ -9,6 +9,7 @@ class App extends Component {
       hour: 0,
       minute: 0,
       sec: 0,
+      milisec: 0,
       isRunning: false
     };
   }
@@ -18,6 +19,10 @@ class App extends Component {
     this.ResetHour();
     this.ResetMinute();
     this.ResetSec();
+    this.ResetMilisec();
+  };
+  ResetMilisec = () => {
+    this.setState({ milisec: 0 });
   };
   ResetSec = () => {
     this.setState({ sec: 0 });
@@ -39,18 +44,20 @@ class App extends Component {
       this.setState({ isRunning: true });
       this.setState({
         t: setInterval(() => {
-          if (this.state.sec === 60) {
-            this.setState({ minute: this.state.minute + 1 });
-            this.ResetSec();
-            if (this.state.minute === 60) {
-              this.setState({ hour: this.state.hour + 1 });
-              this.ResetMinute();
+          if (this.state.milisec === 100) {
+            this.setState({ sec: this.state.sec + 1 });
+            this.ResetMilisec();
+            if (this.state.sec === 60) {
+              this.setState({ minute: this.state.minute + 1 });
+              this.ResetSec();
+              if (this.state.minute === 60) {
+                this.setState({ hour: this.state.hour + 1 });
+                this.ResetMinute();
+              }
             }
           } else console.log('works');
-          this.setState({
-            sec: this.state.sec + 1
-          });
-        }, 1000)
+          this.setState({ milisec: this.state.milisec + 1 });
+        }, 10)
       });
     } else {
     }
@@ -63,7 +70,8 @@ class App extends Component {
 
         <div className='clock'>
           <h1>
-            {this.state.hour} : {this.state.minute} : {this.state.sec}{' '}
+            {this.state.hour} : {this.state.minute} : {this.state.sec}:{' '}
+            {this.state.milisec}{' '}
           </h1>
         </div>
 
@@ -83,4 +91,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Stopwatch;

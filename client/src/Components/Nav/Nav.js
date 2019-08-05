@@ -25,6 +25,11 @@ const nav = () => {
             <Link to="/About" className="nav-link">
               About
             </Link>
+            </li>
+            <li className="nav-item">
+            <Link to="/Profile" className="nav-link">
+              Profile
+            </Link>
           </li>
           <li className="nav-item">
             <Link to="/Games" className="nav-link">
@@ -32,10 +37,16 @@ const nav = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/quizs" className="nav-link">
+            <Link to="/Quizzes" className="nav-link">
               Quizzes
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/QuizAdmin" className="nav-link">
+              Quiz Admin
+            </Link>
+          </li>
+
 
           {/*
                       

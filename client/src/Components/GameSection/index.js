@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import './game.css';
 import SideNav from "./Components/SideNav";
-import { Counter, ToDos } from "./Components/CompApps";
+import { Counter, ToDos, StopWatch } from "./Components/CompApps";
 
 const Game = () => {
 
@@ -14,7 +14,9 @@ const Game = () => {
           <div className="col-10">
               <Route path="/Games/Counter" component={Counter} />{" "}
               <Route path="/Games/ToDos" component={ToDos} />
+              <Route path="/Games/StopWatch" component={StopWatch} />
               <Route path="/Games/" exact component={Counter} />
+              
           </div>
       </div>
     </div>
