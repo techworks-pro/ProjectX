@@ -17,6 +17,9 @@ const nav = () => {
       <Link to='/Home'>
         <Menu name='Home' source='#' />
       </Link>
+      <Link to='./Profile'>
+        <Menu name='Profile' source='#' />
+      </Link>
       <Link to='/About'>
         <Menu name='About' source='#' />
       </Link>

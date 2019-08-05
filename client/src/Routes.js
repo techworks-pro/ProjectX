@@ -5,7 +5,8 @@ import {
   AboutSection,
   GameSection,
   QuizSection,
-  QuizAdmin
+  QuizAdmin,
+  Profile
 } from './Components';
 
 class Routes extends Component {
@@ -22,6 +23,7 @@ class Routes extends Component {
         <Route path='/QuizAdmin' exact component={QuizAdmin} />
         <Route path='/About' exact component={AboutSection} />
         <Route path='/Home' exact component={HomeSection} />
+        <Route path='/Profile' exact component={Profile} />
         <Route path='/' exact component={HomeSection} />
       </Switch>
     );
