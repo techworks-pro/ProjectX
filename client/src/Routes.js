@@ -23,4 +23,5 @@ class Routes extends Component {
     );
   }
 }
+//This file will be imported in App.js
 export default Routes;
