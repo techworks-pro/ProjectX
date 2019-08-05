@@ -18,15 +18,15 @@ router.get('/', (req, res) => {
 
  
 //Add an new item without input QuizID
-router.post('/newQuestion', (req, res) => {
+router.post('/add', (req, res) => {
   let quest = req.body;
   console.log(quest)
   quest.id = 0;
   
-  let sql = 'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; \
-  CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4)';
+  let sql = 'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer =?; \
+  CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4, @answer)';
   mysqlConnection.query(
-    sql, [quest.id, quest.question, quest.option1, quest.option2, quest.option3, quest.option4],
+    sql, [quest.id, quest.question, quest.option1, quest.option2, quest.option3, quest.option4, quest.answer],
     (err, rows, field) => {
       if (!err) res.send(rows);
       else console.log(err)
@@ -35,13 +35,13 @@ router.post('/newQuestion', (req, res) => {
 })
 
 //Update an item by quizID.
-router.put('/updatequest', (req, res) => {
-  let emp = req.body;
+router.put('/', (req, res) => {
+  let quest = req.body;
   
-  let sql = 'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; \
-  CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4)';
+  let sql = 'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer=?; \
+  CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4, @answer)';
   mysqlConnection.query(
-    sql, [emp.id, emp.question, emp.option1, emp.option2, emp.option3, emp.option4],
+    sql, [quest.id, quest.question, quest.option1, quest.option2, quest.option3, quest.option4, quest.answer],
     (err, rows, field) => {
       if (!err) res.send('Updated successfully');
       else console.log(err)

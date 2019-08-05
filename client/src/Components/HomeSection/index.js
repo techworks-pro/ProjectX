@@ -3,7 +3,6 @@ import Signup from "../../Form/Signup";
 import Signin from "../../Form/Signin";
 import "./Home.css";
 import Welcome from "../Welcome/Welcome";
-import Footer from "../Footer/Footer";
 
 class Home extends Component {
   constructor(props) {
