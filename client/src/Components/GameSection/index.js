@@ -7,12 +7,16 @@ import { Counter, ToDos } from "./Components/CompApps";
 const Game = () => {
 
   return (
-    <div className='games-container'>
-      <div className='sideNav'><SideNav /></div>
-      {" "}
-      <Route path="/Games/Counter" component={Counter} />{" "}
-      <Route path="/Games/ToDos" component={ToDos} />
-      <Route path="/Games/" exact component={Counter} />
+    <div className='container-fluid mt-3 mb-3'>
+      <div className="row">
+          <div className='col-2'><SideNav /></div>
+          {" "}
+          <div className="col-10">
+              <Route path="/Games/Counter" component={Counter} />{" "}
+              <Route path="/Games/ToDos" component={ToDos} />
+              <Route path="/Games/" exact component={Counter} />
+          </div>
+      </div>
     </div>
   );
 };

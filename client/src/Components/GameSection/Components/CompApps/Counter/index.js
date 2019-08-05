@@ -4,9 +4,9 @@ import CounterApp from './CounterApp';
 
 const Counter = ()=>{
     return(
-        <div className = 'content-container'>
-        <div className = 'sources'><CounterSource /></div>
-        <div className = 'app-example'><CounterApp /></div>
+        <div className='row'>
+        <div className = 'col-8'><CounterSource /></div>
+        <div className = 'col-4'><CounterApp /></div>
         </div>
     )
 }

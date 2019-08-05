@@ -1,6 +1,3 @@
 #main_container{
-    background-color: rgb(246, 248, 247);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #BED7CE;
 }

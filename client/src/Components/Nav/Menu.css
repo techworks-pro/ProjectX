@@ -1,4 +1,4 @@
-li {
+/* .main-menu li {
     display: inline-block;
     padding: 10px;
     border: 1px solid white;
@@ -7,9 +7,13 @@ li {
     text-transform: uppercase;
 }
 
-li:hover{
+.main-menu li:hover{
     background: white;
     color: black;
     cursor: pointer;
     border: 1px solid black
 }
+
+.main-menu li a {
+    
+} */

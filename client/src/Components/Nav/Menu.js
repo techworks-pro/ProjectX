@@ -8,8 +8,8 @@ const menu = props => {
   };
 
   return (
-    <li className="nav-li">
-      <a href={props.source} style={style}>
+    <li className="nav-item">
+      <a href={props.source} style={style} className="navbar-link">
         {props.name}
       </a>
     </li>

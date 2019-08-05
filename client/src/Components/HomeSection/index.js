@@ -34,46 +34,11 @@ class Home extends Component {
   newSignup = () => {};
   render() {
     return (
-      // <div className="container">
-      //   <div className="app">
-      //     <div className="main">
-      //       <div className="form">
-      //         <div className="card-head">New Member</div>
-      //         <div className="inner">
-      //           <Signup name="signup" id="signup" action={this.newSignup} />
-      //         </div>
-      //       </div>
-
-      //       <div className="form welc">
-      //         <div className="card-head">Welcome to This That Page.</div>
-      //         <div className="inner">
-      //           <Welcome />
-      //         </div>
-      //       </div>
-
-      //       <div className="form">
-      //         <div className="card-head">MEMBER SIGN IN</div>
-      //         <div className="inner">
-      //           <Signin
-      //             name="signin"
-      //             id="signin"
-      //             action={this.submitValidation}
-      //           />
-      //         </div>
-      //       </div>
-      //     </div>
-
-      //     <div className="footer">
-      //       <Footer />
-      //     </div>
-      //   </div>
-      // </div>
-
       <div className="container">
         <div className="row m-5">
           
           <div className="col-4">
-            <div className="card">
+            <div className="card border">
             <div className="card-header">New Member</div>
               <div className="card-body">
                 <Signup name="signup" id="signup" action={this.newSignup} />
