@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch} from 'react-router-dom';
+import AddQuiz from "./Inputs/addQuiz"
 
 class Quiz extends Component {
   constructor() {
@@ -50,8 +51,12 @@ class Quiz extends Component {
       })}
       
         <div>
-          <button className="btn btn-primary"><Link to="/Quiz/Add-Quiz">Add Quiz</Link></button>
+          <button className="btn btn-light"><Link to="/quizs/AddQuiz" className="nav-link">Add Quiz</Link></button>
         </div>
+        <Switch>
+          <Route path="/quizs/AddQuiz" Component={AddQuiz}/>
+        </Switch>
+        
       </div>
     ) : (
       <div>Loading...</div>

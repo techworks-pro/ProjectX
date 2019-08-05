@@ -9,7 +9,7 @@ const footer = () => {
         justifyContent: 'center',
         backgroundColor: '#72A894',
         boxShadow: '5px 5px #000',
-        color: 'white'
+        color: 'black'
     }
 
     const styleRight = {
