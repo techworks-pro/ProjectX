@@ -4,22 +4,23 @@ import './ToDosApp.css';
 const ToDoForm = props => {
   const { deleteTask, editTask, pressEdit, handleChange, el, index } = props;
   return (
-    <div className="one-task" key={index}>
-      <li className = 'todos-one-task'>
+    <div className="d-flex m-1" key={index}>
+      <li className = 'pl-0'>
         {pressEdit[index] ? (
           <input
             type="text"
             defaultValue={el}
             onChange={e => handleChange(e)}
+            className="form-control"
           />
         ) : (
           el
         )}
       </li>
-      <button type="submit" onClick={() => deleteTask(index)}>
+      <button type="submit" onClick={() => deleteTask(index)} className="btn btn-success ml-1">
         Delete
       </button>
-      <button type="submit" onClick={() => editTask(index)}>
+      <button type="submit" onClick={() => editTask(index)} className="btn btn-success ml-1">
         {pressEdit[index] ? "Update" : "Edit"}
       </button>
     </div>

@@ -4,7 +4,7 @@ import ToDoForm from "./ToDoForm.js";
 const TaskList = props => {
   const { tasks } = props;
   return (
-    <ol id = 'todo-ul'>
+    <ol id = ''>
       {tasks.map((el, index) => {
         return <ToDoForm {...props} el={el} index={index} />;
       })}
