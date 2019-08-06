@@ -50,8 +50,8 @@ class QuizAdmin extends Component {
   };
   render() {
     return (
-      <div className="container p-5 border">
-        <form onSubmit={this.addQuiz} style={{ width: '80%' }}>
+      <div className="container p-5 border"  >
+        <form onSubmit={this.addQuiz} style={{ width: '80%', margin: "0 auto"}}>
 
           <div className="form-group">
             <label for="question">Question</label>
