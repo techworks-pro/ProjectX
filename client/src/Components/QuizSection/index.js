@@ -13,7 +13,6 @@ class Quizzes extends Component {
       questionSet: [],
       questionNum: 0,
       score: 0,
-      groupedQ: [],
       isLoaded: false
     };
   }
@@ -40,24 +39,22 @@ class Quizzes extends Component {
   };
 
   groupQuestions = Language => {
-    let arr = this.state.questions;
+    console.log(Language);
+    console.log('group: ', 'fired');
+    let arr = [...this.state.questionSet];
     let groupedArr = [];
-    console.log(arr);
+
     for (let i = 0; i < arr.length; i++) {
+      console.log(Language);
       if (arr[i].Language == Language) {
+        console.log('dun?');
         groupedArr.push(arr[i]);
-
-        console.log('groupedArr', groupedArr);
-
         this.setState({ questions: groupedArr });
-        console.log('Questions: ', this.state.questions);
+        this.setState({ questionNum: 0 });
+        this.setState({ score: 0 });
       }
-      // else {
-      //   this.state.groupedQ.push(this.state.questions[i].question);
-
-      //   console.log(this.state.groupedQ);
-      // }
     }
+    console.log(this.state.questions);
   };
 
   async componentDidMount() {
@@ -144,15 +141,13 @@ class Quizzes extends Component {
         </div>
       ) : (
         <div className='QuizEnd'>
-          End of Quiz!
+          End of Quiz! {String(this.state.questions.Language)}
           <div className='FinalScore'> Your Score is : {this.state.score}</div>
         </div>
       )
     ) : (
       <div>Loading...</div>
     );
-
-    // );
   }
 }
 

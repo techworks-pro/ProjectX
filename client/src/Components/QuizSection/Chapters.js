@@ -1,18 +1,6 @@
 import React from 'react';
 
 const Chapters = ({ chapterslist, groupQuestions }) => {
-  //   return chapterslist.map((el, index) => (
-  //     <div className='List'>
-  {
-    /* <button
-        type='button'
-        onClick={() => setQ(el.Language)}
-        Language={el.Language}
-      >
-        {' '}
-        {el.Language}{' '}
-      </button> */
-  }
   return (
     <div className='Languages'>
       <button
@@ -22,11 +10,10 @@ const Chapters = ({ chapterslist, groupQuestions }) => {
       >
         Javascript
       </button>
-
+      <br />
       <button type='button' onClick={() => groupQuestions('HTML')} name='HTML'>
         HTML
       </button>
-      <br />
     </div>
   );
 };
