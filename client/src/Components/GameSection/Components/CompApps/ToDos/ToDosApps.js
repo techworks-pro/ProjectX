@@ -64,11 +64,17 @@ class ToDoList extends Component {
   render() {
     console.log(this.state.todos, this.state.currentToDo, this.state.pressEdit);
     return (
-      <div className="todos-container">
-        <form onSubmit={this.addItem} className="main-form">
-          <label htmlFor="taskName">Task Name:</label>
-          <input name="taskName" type="text" placeholder="Add todo here!" />
-          <button type="submit">Add Task</button>
+      // <div className="todos-container">
+      <div className="container border rounded p-3">
+        {/* <form onSubmit={this.addItem} className="main-form"> */}
+        <form onSubmit={this.addItem}>
+          <div className="form-group d-flex">
+                <label htmlFor="taskName">Task Name:</label>
+                <>
+                <input name="taskName" type="text" placeholder="Add todo here!" className="form-control" />
+                </>
+                <><button type="submit" className="btn btn-success ml-1">Add Task</button></>
+          </div>
         </form>
         <TaskList
           tasks={this.state.todos}
@@ -76,7 +82,7 @@ class ToDoList extends Component {
           deleteTask={this.deleteTask}
           editTask={this.editTask}
           handleChange={this.handleChange}
-          className="tasklist"
+          className=""
         />
       </div>
     );

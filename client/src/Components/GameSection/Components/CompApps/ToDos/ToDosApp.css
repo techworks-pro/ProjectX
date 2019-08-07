@@ -1,4 +1,4 @@
-.todos-container {
+/* .todos-container {
     background-color: darkgray;
     height: 94%;
     width: 90%;
@@ -9,35 +9,35 @@
     flex-direction: column;
     align-items: baseline;
   }
-  
-  button {
+   */
+  /* button {
     margin-left: 10px;
     font-size: 1.2rem;
-  }
+  } */
   
-  input {
+  /* input {
     margin-left: 10px;
     font-size: 1.2rem;
-  }
-  
+  } */
+/*   
   .one-task {
     padding: 8px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
   }
-  
-  .main-form {
+   */
+  /* .main-form {
     display: flex;
     justify-content: space-between;
-  }
-
+  } */
+/* 
   .todos-one-task{
       color:black;
       background-color: white;
       margin:0;
-  }
+  } */
 
-  #todo-ul{
+  /* #todo-ul{
       padding: 0;
-  }
+  } */

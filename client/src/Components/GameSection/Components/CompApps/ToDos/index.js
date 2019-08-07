@@ -4,9 +4,9 @@ import ToDosApp from './ToDosApps';
 
 const ToDos = ()=>{
     return(
-        <div className= 'content-container'>
-        <div className = 'sources'><ToDosSource /></div>
-        <div className = 'app-example'><ToDosApp /></div>
+        <div className= 'row'>
+        <div className = 'col-8'><ToDosSource /></div>
+        <div className = 'col-4'><ToDosApp /></div>
         </div>
     )
 }

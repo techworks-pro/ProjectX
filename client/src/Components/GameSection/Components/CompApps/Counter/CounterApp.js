@@ -38,23 +38,20 @@ class counterApp extends Component {
   render() {
     console.log("this is line number 13", this.state.counter);
     return (
-      <div className="container">
-        <div className="navbar">
-          <h4>Counter.JS</h4>
-        </div>
-        <div className="counter">
-          <h1> {this.state.counter} </h1>
+      <div className="container border rounded p-4">
+        <div className="text-white bt">
+          <h1 className="bg-dark p-4 text-center"> {this.state.counter} </h1>
 
-          <button type="button" onClick={this.reset}>
+          <button type="button" onClick={this.reset} className="btn btn-success btn-lg btn-block">
             Reset
           </button>
-          <button type="button" onClick={this.increment} className="buttons">
+          <button type="button" onClick={this.increment} className="btn btn-success btn-lg btn-block">
             Increment
           </button>
-          <button type="button" onClick={this.decrement} className="buttons">
+          <button type="button" onClick={this.decrement} className="btn btn-success btn-lg btn-block">
             Decrement
           </button>
-          <button type="button" onClick={this.toggle} className="buttons">
+          <button type="button" onClick={this.toggle} className="btn btn-success btn-lg btn-block">
             {this.state.tog}
           </button>
         </div>

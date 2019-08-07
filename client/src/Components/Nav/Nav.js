@@ -13,8 +13,8 @@ const nav = () => {
   return (
     <nav
       className="navbar navbar-expand navbar-light"
-      style={{ backgroundColor: '#72A894', justifyContent: "center" }}>
-      <div className="collapse navbar-collapse" id="navbarNav">
+      style={{ backgroundColor: '#72A894' }}>
+      <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link to="/Home" className="nav-link">
