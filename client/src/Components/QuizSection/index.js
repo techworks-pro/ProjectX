@@ -3,6 +3,7 @@ import axios from 'axios';
 // import { Container, Col, Row } from 'react-bootstrap';
 import './quiz.css';
 import DisplayScore from './DisplayScore';
+import Chapter from './Chapters';
 
 class Quizzes extends Component {
   constructor() {
@@ -12,6 +13,7 @@ class Quizzes extends Component {
       questionSet: [],
       questionNum: 0,
       score: 0,
+      groupedQ: [],
       isLoaded: false
     };
   }
@@ -33,8 +35,29 @@ class Quizzes extends Component {
     this.setState({ questionNum: this.state.questionNum + 1 });
   };
 
-  selectChapter = event => {
-    // this.setState({})
+  setQuestion = id => {
+    this.setState({ questionNum: id });
+  };
+
+  groupQuestions = Language => {
+    let arr = this.state.questions;
+    let groupedArr = [];
+    console.log(arr);
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].Language == Language) {
+        groupedArr.push(arr[i]);
+
+        console.log('groupedArr', groupedArr);
+
+        this.setState({ questions: groupedArr });
+        console.log('Questions: ', this.state.questions);
+      }
+      // else {
+      //   this.state.groupedQ.push(this.state.questions[i].question);
+
+      //   console.log(this.state.groupedQ);
+      // }
+    }
   };
 
   async componentDidMount() {
@@ -42,6 +65,7 @@ class Quizzes extends Component {
       //axios build in json()
       const res = await axios.get(`/api/quizs`);
       this.setState({
+        questionSet: res.data,
         questions: res.data,
         isLoaded: true
       });
@@ -51,28 +75,16 @@ class Quizzes extends Component {
   }
 
   render() {
-    console.log(this.state);
     return this.state.isLoaded ? (
       this.state.questions.length !== this.state.questionNum ? (
         <div className='container'>
           <div className='row'>
             <div className='col-2'>
               <h5>Select Chapter</h5>
-              <p>
-                <a href='#'>Chapter 1</a>
-              </p>
-              <p>
-                <a href='#'>Chapter 2</a>
-              </p>
-              <p>
-                <a href='#'>Chapter 3</a>
-              </p>
-              <p>
-                <a href='#'>Chapter 4</a>
-              </p>
-              <p>
-                <a href='#'>Chapter 5</a>
-              </p>
+              <Chapter
+                chapterslist={this.state.questions}
+                groupQuestions={this.groupQuestions}
+              />
             </div>
             <div className='col-8' xs={6}>
               <div className='QuizBox'>
