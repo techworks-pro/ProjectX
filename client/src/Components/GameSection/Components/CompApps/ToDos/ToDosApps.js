@@ -1,39 +1,40 @@
-import React, { Component } from "react";
-import TaskList from "./TaskList";
-import './ToDosApp.css';
+import React, { Component } from 'react';
+import TaskList from './TaskList';
 
 class ToDoList extends Component {
   constructor() {
     super();
     this.state = {
-      todos: [],
-      currentToDo: "",
-      pressEdit: []
+      tasks: [],
+      pressEdit: [],
+      editedTask: '',
+      currentTaskIsEditing: false
     };
   }
 
-  handleChange = e => {
+  editCurrentTask = e => {
     this.setState({
-      currentToDo: e.target.value
+      editedTask: e.target.value,
+      currentTaskIsEditing: true
     });
   };
 
-  addItem = e => {
+  addTask = e => {
     e.preventDefault();
     if (e.target.taskName.value) {
       this.setState({
-        todos: [...this.state.todos, e.target.taskName.value],
-        pressEdit: new Array(this.state.todos.length + 1).fill(false) //[false,true,false,false]
+        tasks: [...this.state.tasks, e.target.taskName.value],
+        pressEdit: new Array(this.state.tasks.length + 1).fill(false)
       });
-      e.target.taskName.value = "";
+      e.target.taskName.value = '';
     }
   };
 
   deleteTask = id => {
     this.setState({
-      todos: [
-        ...this.state.todos.slice(0, id),
-        ...this.state.todos.slice(id + 1)
+      tasks: [
+        ...this.state.tasks.slice(0, id),
+        ...this.state.tasks.slice(id + 1)
       ],
       pressEdit: [
         ...this.state.pressEdit.slice(0, id),
@@ -43,6 +44,16 @@ class ToDoList extends Component {
   };
 
   editTask = id => {
+    if (this.state.pressEdit[id] && this.state.currentTaskIsEditing) {
+      this.setState({
+        tasks: [
+          ...this.state.tasks.slice(0, id),
+          this.state.editedTask,
+          ...this.state.tasks.slice(id + 1)
+        ],
+        currentTaskIsEditing: false
+      });
+    }
     this.setState({
       pressEdit: [
         ...this.state.pressEdit.slice(0, id),
@@ -50,39 +61,32 @@ class ToDoList extends Component {
         ...this.state.pressEdit.slice(id + 1)
       ]
     });
-    if (this.state.pressEdit[id] === true) {
-      this.setState({
-        todos: [
-          ...this.state.todos.slice(0, id),
-          this.state.currentToDo,
-          ...this.state.todos.slice(id + 1)
-        ]
-      });
-    }
   };
 
   render() {
-    console.log(this.state.todos, this.state.currentToDo, this.state.pressEdit);
     return (
-      // <div className="todos-container">
       <div className="container border rounded p-3">
-        {/* <form onSubmit={this.addItem} className="main-form"> */}
-        <form onSubmit={this.addItem}>
-          <div className="form-group d-flex">
-                <label htmlFor="taskName">Task Name:</label>
-                <>
-                <input name="taskName" type="text" placeholder="Add todo here!" className="form-control" />
-                </>
-                <><button type="submit" className="btn btn-success ml-1">Add Task</button></>
-          </div>
+
+        <form onSubmit={this.addTask} className="form-group d-flex">
+            <label htmlFor="taskName">Task Name:</label>
+              <input
+                name="taskName"
+                type="text"
+                placeholder="Add todo here!"
+                className="form-control"
+              />
+              <button type="submit" className="btn btn-success ml-1">
+                Add Task
+              </button>
         </form>
+
         <TaskList
-          tasks={this.state.todos}
+          tasks={this.state.tasks}
           pressEdit={this.state.pressEdit}
           deleteTask={this.deleteTask}
           editTask={this.editTask}
-          handleChange={this.handleChange}
-          className=""
+          editCurrentTask={this.editCurrentTask}
+          className="tasklist"
         />
       </div>
     );

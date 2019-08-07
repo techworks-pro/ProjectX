@@ -2,7 +2,7 @@ import React from "react";
 import './ToDosApp.css';
 
 const ToDoForm = props => {
-  const { deleteTask, editTask, pressEdit, handleChange, el, index } = props;
+  const { deleteTask, editTask, pressEdit, editCurrentTask, el, index } = props;
   return (
     <div className="d-flex m-1" key={index}>
       <li className = 'pl-0'>
@@ -10,7 +10,7 @@ const ToDoForm = props => {
           <input
             type="text"
             defaultValue={el}
-            onChange={e => handleChange(e)}
+            onChange={e => editCurrentTask(e)}
             className="form-control"
           />
         ) : (

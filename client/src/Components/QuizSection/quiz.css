@@ -1,38 +1,40 @@
 .QuizBox {
-    padding: 15px;
-    border-style: solid;
-    border-width: 5px;
-    border-color: white;
-  }
-  
-  .QuestionBox {
-    font-size: 40px;
-    justify-content: flex-start;
-  }
-  
-  .OptionBox {
-    opacity: 80%;
-    padding: 20px;
-    width: 100%;
-    padding: 20px;
-  }
-  .button {
-    font-size: 25px;
-    background-color: rgb(43, 151, 88);
-    padding: 15px;
-    padding-right: 20px;
-    padding-left: 20px;
-    border-radius: 15px;
-  }
-  .button:hover {
-    background-color: #23da29;
-  }
-  
-  .button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
-  .QuizEnd {
-    font-size: 55px;
-  }
+  padding: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+}
+
+.QuizBox .QuestionBox {
+  font-size: 40px;
+  justify-content: flex-start;
+}
+
+.QuizBox .OptionBox {
+  justify-content: space-between;
+}
+.QuizBox .button {
+  font-size: 25px;
+  background-color: rgb(43, 151, 88);
+  padding: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 15px;
+}
+.button:hover {
+  background-color: #23da29;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.QuizEnd {
+  font-size: 55px;
+}
+
+.ScoreDisplay {
+  font-size: 45px;
+  font-weight: bolder;
+}
