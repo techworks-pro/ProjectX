@@ -54,7 +54,8 @@ if (process.env.NODE_ENV === "production") {
 
   
   app.get('*', (req, res)=> {
-    res.sendFile(path.resolve(__dirname, 'client', 'build'))
+    // res.sendFile(path.resolve(__dirname, 'client', 'build'))
+    res.send("path not found")
   })
 
 //   app.use(function(err, req, res, next) {

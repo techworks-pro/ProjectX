@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './quiz.css';
 import axios from 'axios';
 
+
 class QuizAdmin extends Component {
   constructor() {
     super();

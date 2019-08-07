@@ -3,6 +3,8 @@ const router = require("express").Router();
 
 //Server route '/api/quizs'
 router.use("/quizs", require("./quizs"));
+//Server route '/api/sourceCodes'
+router.use("/sourceCodes", require("./sourceCodes"));
 //Add you new route below
 
 //similar to export default in react
