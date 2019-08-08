@@ -55,8 +55,7 @@ class Stopwatch extends Component {
                 this.ResetMinute();
               }
             }
-          } else console.log('works');
-          this.setState({ milisec: this.state.milisec + 1 });
+          } else this.setState({ milisec: this.state.milisec + 1 });
         }, 10)
       });
     } else {
@@ -66,25 +65,36 @@ class Stopwatch extends Component {
   render() {
     return (
       <div>
-
         <div className='bg-white text-center rounded'>
           <h1>
             {this.state.hour} : {this.state.minute} : {this.state.sec}:{' '}
             {this.state.milisec}{' '}
           </h1>
         </div>
-        <div className="d-flex flex-wrap justify-content-center border rounded">
-                  <button type='button' className='btn btn-success btn-lg m-2' onClick={this.Reset}>
-                    Reset
-                  </button>
+        <div className='d-flex flex-wrap justify-content-center border rounded'>
+          <button
+            type='button'
+            className='btn btn-success btn-lg m-2'
+            onClick={this.Reset}
+          >
+            Reset
+          </button>
 
-                  <button type='button' className='btn btn-success btn-lg m-2' onClick={this.Start}>
-                    Start
-                  </button>
+          <button
+            type='button'
+            className='btn btn-success btn-lg m-2'
+            onClick={this.Start}
+          >
+            Start
+          </button>
 
-                  <button type='button' className='btn btn-success btn-lg m-2' onClick={this.Pause}>
-                    Pause
-                  </button>
+          <button
+            type='button'
+            className='btn btn-success btn-lg m-2'
+            onClick={this.Pause}
+          >
+            Pause
+          </button>
         </div>
       </div>
     );

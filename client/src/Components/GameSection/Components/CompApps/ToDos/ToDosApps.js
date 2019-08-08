@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import TaskList from "./TaskList";
+import React, { Component } from 'react';
+import TaskList from './TaskList';
 import './ToDosApp.css';
 
 class ToDoList extends Component {
@@ -7,7 +7,7 @@ class ToDoList extends Component {
     super();
     this.state = {
       todos: [],
-      currentToDo: "",
+      currentToDo: '',
       pressEdit: []
     };
   }
@@ -25,7 +25,7 @@ class ToDoList extends Component {
         todos: [...this.state.todos, e.target.taskName.value],
         pressEdit: new Array(this.state.todos.length + 1).fill(false) //[false,true,false,false]
       });
-      e.target.taskName.value = "";
+      e.target.taskName.value = '';
     }
   };
 
@@ -62,18 +62,24 @@ class ToDoList extends Component {
   };
 
   render() {
-    console.log(this.state.todos, this.state.currentToDo, this.state.pressEdit);
     return (
-      // <div className="todos-container">
-      <div className="container border rounded p-3">
-        {/* <form onSubmit={this.addItem} className="main-form"> */}
+      <div className='container border rounded p-3'>
         <form onSubmit={this.addItem}>
-          <div className="form-group d-flex">
-                <label htmlFor="taskName">Task Name:</label>
-                <>
-                <input name="taskName" type="text" placeholder="Add todo here!" className="form-control" />
-                </>
-                <><button type="submit" className="btn btn-success ml-1">Add Task</button></>
+          <div className='form-group d-flex'>
+            <label htmlFor='taskName'>Task Name:</label>
+            <>
+              <input
+                name='taskName'
+                type='text'
+                placeholder='Add todo here!'
+                className='form-control'
+              />
+            </>
+            <>
+              <button type='submit' className='btn btn-success ml-1'>
+                Add Task
+              </button>
+            </>
           </div>
         </form>
         <TaskList
@@ -82,7 +88,7 @@ class ToDoList extends Component {
           deleteTask={this.deleteTask}
           editTask={this.editTask}
           handleChange={this.handleChange}
-          className=""
+          className=''
         />
       </div>
     );
