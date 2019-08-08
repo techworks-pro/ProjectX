@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { Container, Col, Row } from 'react-bootstrap';
 import './quiz.css';
 import DisplayScore from './DisplayScore';
 import Chapter from './Chapters';
@@ -17,14 +16,10 @@ class Quizzes extends Component {
     };
   }
   selectOption = event => {
-    console.log(event.target.name);
-    console.log(this.state.questions[this.state.questionNum].answer);
-
     if (
       String(event.target.name) ===
       String(this.state.questions[this.state.questionNum].answer)
     ) {
-      console.log('right answer!');
       this.setState({ score: this.state.score + 1 });
     }
     this.nextQuestion();
@@ -39,22 +34,16 @@ class Quizzes extends Component {
   };
 
   groupQuestions = Language => {
-    console.log(Language);
-    console.log('group: ', 'fired');
     let arr = [...this.state.questionSet];
     let groupedArr = [];
-
     for (let i = 0; i < arr.length; i++) {
-      console.log(Language);
-      if (arr[i].Language == Language) {
-        console.log('dun?');
+      if (arr[i].Language === Language) {
         groupedArr.push(arr[i]);
         this.setState({ questions: groupedArr });
         this.setState({ questionNum: 0 });
         this.setState({ score: 0 });
       }
     }
-    console.log(this.state.questions);
   };
 
   async componentDidMount() {
@@ -89,9 +78,9 @@ class Quizzes extends Component {
                   {this.state.questions[this.state.questionNum].question}
                 </div>
                 <div className='OptionBox'>
-                  <div class='d-flex justify-content-around'>
+                  <div className='d-flex justify-content-around'>
                     <button
-                      class='button'
+                      className='button'
                       onClick={this.selectOption}
                       name={
                         this.state.questions[this.state.questionNum].option1
@@ -101,7 +90,7 @@ class Quizzes extends Component {
                     </button>
 
                     <button
-                      class='button'
+                      className='button'
                       onClick={this.selectOption}
                       name={
                         this.state.questions[this.state.questionNum].option2
@@ -110,9 +99,9 @@ class Quizzes extends Component {
                       {this.state.questions[this.state.questionNum].option2}
                     </button>
                   </div>
-                  <div class='d-flex justify-content-around'>
+                  <div className='d-flex justify-content-around'>
                     <button
-                      class='button'
+                      className='button'
                       onClick={this.selectOption}
                       name={
                         this.state.questions[this.state.questionNum].option3
@@ -121,7 +110,7 @@ class Quizzes extends Component {
                       {this.state.questions[this.state.questionNum].option3}
                     </button>
                     <button
-                      class='button'
+                      className='button'
                       onClick={this.selectOption}
                       name={
                         this.state.questions[this.state.questionNum].option4
@@ -141,7 +130,7 @@ class Quizzes extends Component {
         </div>
       ) : (
         <div className='QuizEnd'>
-          End of Quiz! {String(this.state.questions.Language)}
+          End of Quiz!
           <div className='FinalScore'> Your Score is : {this.state.score}</div>
         </div>
       )

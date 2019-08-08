@@ -82,7 +82,7 @@ class QuizAdmin extends Component {
           style={{ width: '80%', margin: '0 auto' }}
         >
           <div className='form-group'>
-            <label for='question'>Question</label>
+            <label htmlFor='question'>Question</label>
             <input
               type='text'
               onChange={e => this.setState({ Question: e.target.value })}
@@ -91,7 +91,7 @@ class QuizAdmin extends Component {
             />
           </div>
           <div className='form-group'>
-            <label for='option1'>Option1</label>
+            <label htmlFor='option1'>Option1</label>
             <input
               type='text'
               onChange={e => this.setState({ Option1: e.target.value })}
@@ -100,7 +100,7 @@ class QuizAdmin extends Component {
             />
           </div>
           <div className='form-group'>
-            <label for='option2'>Option2</label>
+            <label htmlFor='option2'>Option2</label>
             <input
               type='text'
               onChange={e => this.setState({ Option2: e.target.value })}
@@ -109,7 +109,7 @@ class QuizAdmin extends Component {
             />
           </div>
           <div className='form-group'>
-            <label for='option3'>Option3</label>
+            <label htmlFor='option3'>Option3</label>
             <input
               type='text'
               onChange={e => this.setState({ Option3: e.target.value })}
@@ -118,7 +118,7 @@ class QuizAdmin extends Component {
             />
           </div>
           <div className='form-group'>
-            <label for='option4'>Option4</label>
+            <label htmlFor='option4'>Option4</label>
             <input
               type='text'
               onChange={e => this.setState({ Option4: e.target.value })}
@@ -127,7 +127,7 @@ class QuizAdmin extends Component {
             />
           </div>
           <div className='form-group'>
-            <label for='answer'>Answer</label>
+            <label htmlFor='answer'>Answer</label>
             <input
               type='text'
               onChange={e => this.setState({ Answer: e.target.value })}

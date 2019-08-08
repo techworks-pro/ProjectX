@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import "./CounterApp.css";
+import React, { Component } from 'react';
+import './CounterApp.css';
 
 class counterApp extends Component {
   constructor() {
     super();
     this.state = {
       counter: 0,
-      tog: "Single Count",
+      tog: 'Single Count',
       togCount: 1
     };
   }
@@ -32,26 +32,41 @@ class counterApp extends Component {
   toggle = () => {
     this.setState({
       togCount: this.state.togCount === 1 ? 2 : 1,
-      tog: this.state.tog === "Single Count" ? "Double Count" : "Single Count"
+      tog: this.state.tog === 'Single Count' ? 'Double Count' : 'Single Count'
     });
   };
   render() {
-    console.log("this is line number 13", this.state.counter);
     return (
-      <div className="container border rounded p-4">
-        <div className="text-white bt">
-          <h1 className="bg-dark p-4 text-center"> {this.state.counter} </h1>
+      <div className='container border rounded p-4'>
+        <div className='text-white bt'>
+          <h1 className='bg-dark p-4 text-center'> {this.state.counter} </h1>
 
-          <button type="button" onClick={this.reset} className="btn btn-success btn-lg btn-block">
+          <button
+            type='button'
+            onClick={this.reset}
+            className='btn btn-success btn-lg btn-block'
+          >
             Reset
           </button>
-          <button type="button" onClick={this.increment} className="btn btn-success btn-lg btn-block">
+          <button
+            type='button'
+            onClick={this.increment}
+            className='btn btn-success btn-lg btn-block'
+          >
             Increment
           </button>
-          <button type="button" onClick={this.decrement} className="btn btn-success btn-lg btn-block">
+          <button
+            type='button'
+            onClick={this.decrement}
+            className='btn btn-success btn-lg btn-block'
+          >
             Decrement
           </button>
-          <button type="button" onClick={this.toggle} className="btn btn-success btn-lg btn-block">
+          <button
+            type='button'
+            onClick={this.toggle}
+            className='btn btn-success btn-lg btn-block'
+          >
             {this.state.tog}
           </button>
         </div>

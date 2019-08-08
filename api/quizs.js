@@ -1,68 +1,71 @@
-// let quizs = "This quiz is from ./server/api/quizs.js";
+const router = require('express').Router();
 
-const router = require("express").Router();
-
-const mysqlConnection = require('../server')
-
+const mysqlConnection = require('../server');
 
 router.get('/', (req, res) => {
-  
-  mysqlConnection.query('SELECT * FROM quiz',
-  (err, rows, field)=>{
-    if(!err){
+  mysqlConnection.query('SELECT * FROM quiz', (err, rows, field) => {
+    if (!err) {
       res.send(rows);
-    }
-    else(console.log(err))
-  })
-})
+    } else console.log(err);
+  });
+});
 
- 
 //Add an new item without input QuizID
 router.post('/add', (req, res) => {
   let quest = req.body;
-  console.log(quest)
+  console.log(quest);
   quest.id = 0;
-  
-  let sql = 'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer =?; \
+
+  let sql =
+    'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer =?; \
   CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4, @answer)';
   mysqlConnection.query(
-    sql, [quest.id, quest.question, quest.option1, quest.option2, quest.option3, quest.option4, quest.answer],
+    sql,
+    [
+      quest.id,
+      quest.question,
+      quest.option1,
+      quest.option2,
+      quest.option3,
+      quest.option4,
+      quest.answer
+    ],
     (err, rows, field) => {
       if (!err) res.send(rows);
-      else console.log(err)
+      else console.log(err);
     }
-  )
-})
+  );
+});
 
 //Update an item by quizID.
 router.put('/', (req, res) => {
   let quest = req.body;
-  
-  let sql = 'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer=?; \
+
+  let sql =
+    'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer=?; \
   CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4, @answer)';
   mysqlConnection.query(
-    sql, [quest.id, quest.question, quest.option1, quest.option2, quest.option3, quest.option4, quest.answer],
+    sql,
+    [
+      quest.id,
+      quest.question,
+      quest.option1,
+      quest.option2,
+      quest.option3,
+      quest.option4,
+      quest.answer
+    ],
     (err, rows, field) => {
       if (!err) res.send('Updated successfully');
-      else console.log(err)
+      else console.log(err);
     }
-  )
-})
+  );
+});
 
 //similar to export default
 module.exports = router;
 
-
-
-
-
-
-
-
-
 /** -----------------------------THESE CODES ARE FOR REFERENCE ONLY-----------------------------------------  */
-
-
 
 // //This is a put request, the route is '/api/students'
 // //For updating a new item. should get a prameter call id which is from url
@@ -92,4 +95,3 @@ module.exports = router;
 //   students = students.filter(el => el.id !== id);
 //   res.send(students);
 // });
-

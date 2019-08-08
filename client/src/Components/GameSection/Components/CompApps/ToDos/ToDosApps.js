@@ -5,6 +5,7 @@ class ToDoList extends Component {
   constructor() {
     super();
     this.state = {
+
       tasks: [],
       pressEdit: [],
       editedTask: '',
@@ -86,7 +87,6 @@ class ToDoList extends Component {
           deleteTask={this.deleteTask}
           editTask={this.editTask}
           editCurrentTask={this.editCurrentTask}
-          className="tasklist"
         />
       </div>
     );
