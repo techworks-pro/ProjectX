@@ -6,7 +6,7 @@ const ToDoForm = props => {
     deleteTask,
     editTask,
     pressEdit,
-    editCurrentTask，
+    editCurrentTask,
     el,
     index,
     key
