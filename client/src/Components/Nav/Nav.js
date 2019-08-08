@@ -48,9 +48,7 @@ const nav = () => {
           </li>
 
 
-          {/*
-                      
-                      <Link to="/Home" className="nav-link">
+          {/* <Link to="/Home" className="nav-link">
                             <Menu name="Home" source="#" /> 
                           </Link>
 

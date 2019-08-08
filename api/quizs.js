@@ -5,7 +5,7 @@ const router = require("express").Router();
 const mysqlConnection = require('../server')
 
 
-router.get('/', (req, res) => {
+router.get('/', auth,  (req, res) => {
   
   mysqlConnection.query('SELECT * FROM quiz',
   (err, rows, field)=>{
@@ -22,7 +22,6 @@ router.post('/add', (req, res) => {
   let quest = req.body;
   console.log(quest)
   quest.id = 0;
-  
   let sql = 'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer =?; \
   CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4, @answer)';
   mysqlConnection.query(
