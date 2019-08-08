@@ -6,7 +6,7 @@ const ToDoForm = props => {
     deleteTask,
     editTask,
     pressEdit,
-    handleChange,
+    editCurrentTask，
     el,
     index,
     key
@@ -18,8 +18,8 @@ const ToDoForm = props => {
           <input
             type='text'
             defaultValue={el}
-            onChange={e => handleChange(e)}
-            className='form-control'
+            onChange={e => editCurrentTask(e)}
+            className="form-control"
           />
         ) : (
           el
