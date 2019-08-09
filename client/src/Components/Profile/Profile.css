@@ -4,7 +4,12 @@
     position: relative;
     margin: 0;
     justify-content: center;
+    text-align: center
+    
   }
+  /* .Body{
+    background-image: url('PO.png')
+  } */
   .Heading {
     font-size: 40px;
     font-weight: bolder;

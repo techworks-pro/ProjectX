@@ -11,7 +11,7 @@ const header = () => {
   };
   return (
     <div className="App-header">
-      <h1 style={headingStyle}>ProjectX</h1>
+      <h1 style={headingStyle}>Quonto</h1>
     </div>
   );
 };

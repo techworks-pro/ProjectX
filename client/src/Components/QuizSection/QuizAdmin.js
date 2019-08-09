@@ -117,28 +117,28 @@ class QuizAdmin extends Component {
     }
   }
   
-  viewQuiz = async event => {
-    if (this.state.pressViewButton === false) {
-      try {
-        //axios build in json()
-        const res = await axios.get(`/api/quizs`);
-        let arr = new Array(res.data.length).fill(false);
-        this.setState({
-          QuestionSet: res.data,
-          editArr: arr,
-          pressViewButton: true
-        });
-      } catch (err) {
-        console.log(`Got error when fetching data,the error is ${err}`);
-      }
-    } else if (this.state.pressViewButton === true) {
-      this.setState({
-        QuestionSet: [],
-        editArr: [],
-        pressViewButton: false
-      });
-    }
-  };
+  // viewQuiz = async event => {
+  //   if (this.state.pressViewButton === false) {
+  //     try {
+  //       //axios build in json()
+  //       const res = await axios.get(`/api/quizs`);
+  //       let arr = new Array(res.data.length).fill(false);
+  //       this.setState({
+  //         QuestionSet: res.data,
+  //         editArr: arr,
+  //         pressViewButton: true
+  //       });
+  //     } catch (err) {
+  //       console.log(`Got error when fetching data,the error is ${err}`);
+  //     }
+  //   } else if (this.state.pressViewButton === true) {
+  //     this.setState({
+  //       QuestionSet: [],
+  //       editArr: [],
+  //       pressViewButton: false
+  //     });
+  //   }
+  // };
 
   editMode = async index => {
     let { id, question, option1, option2, option3, option4, answer, Language } = this.state.QuestionSet[index];
@@ -159,17 +159,23 @@ class QuizAdmin extends Component {
 
   deleteQuiz = async (event, index) => {
     event.preventDefault();
+  
     const id = this.state.QuestionSet[index].id;
-    console.log('id in delete', id)
+    console.log('id for deletion', id)
+    
     try {
-      await axios.delete(`/:${id}`)
+      const deleted = await axios.delete(`/api/quizs/${id}`);
+      console.log("delete successful ", deleted);
+      const res = await axios.get(`/api/quizs`);
+      console.log('Data after delete Quiz: ', res.data)
+      this.setState({
+        QuestionSet: res.data,
+      })
     } catch (error) {
       console.log(error)
     }
-    const res = await axios.get(`/api/quizs`);
-    this.setState({
-      QuestionSet: res.data,
-    })
+    console.log("After try/catch")
+    
     
   }
   
@@ -286,8 +292,8 @@ class QuizAdmin extends Component {
           return (
             <li key={index}>
               {el.question}
-              <button onClick={() => this.editMode(index)} className="btn btn-success ml-2"><a href="#the-form-section" class="text-white">Edit</a></button>
-              <button onClick={()=>this.deleteQuiz(index)} className="btn btn-danger ml-2">Delete</button>
+              <button onClick={() => this.editMode(index)} className="btn btn-success ml-2 mb-2"><a href="#the-form-section" className="text-white">Edit</a></button>
+              <button onClick={(event)=>this.deleteQuiz(event, index)} className="btn btn-danger ml-2 mb-2">Delete</button>
             </li>
           );
         })}

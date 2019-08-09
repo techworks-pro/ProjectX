@@ -5,12 +5,16 @@ const About = () => {
   return (
     <div>
       <br />
-      <div className='AboutContainer'>
+      <div className='AboutContainer text-center'>
         <div className='Intro-bg'>
           <div className='Intro'>
-            ProjectX is a full-stack web application developed by techworks
-            team. Sunil Ale, Donghao Wu And Rinchen Lama
+            <h4 style={{margin: '0'}}>
+            Quonto is a full-stack web application developed by techworks
+      team. 
+            <br/>Sunil Ale, Donghao Wu And Rinchen Lama
+            </h4>
           </div>
+         
         </div>
         <div className='Walkthrough'>
           The project is deployed on Heroku and uses the ClearDB MySQL as a

@@ -7,7 +7,7 @@ const Profile = () => {
       <div className='Heading'>PROFILE</div>
       <div className='Body'>
         <div className='Image'>
-          <img src=' ' alt='no' />
+          {/* <img src="" alt='no' /> */}
         </div>
         <div className='GenInfo'>
           <p>John Doe</p>

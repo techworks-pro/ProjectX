@@ -3,7 +3,7 @@ import React from 'react';
 const welcome = () => {
   return (
     <div>
-      Welcome to ProjectX. A fullstack application focused on implementation of
+      Welcome to Quonto. A fullstack application focused on implementation of
       various features of a complete web app:
       <ul>
         <li>HTML</li>
