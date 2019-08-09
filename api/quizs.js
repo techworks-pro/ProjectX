@@ -18,11 +18,10 @@ router.get('/', (req, res) => {
 
  
 //Add an new item without input QuizID
-router.post('/add', (req, res) => {
+router.post('/', (req, res) => {
   let quest = req.body;
   console.log(quest)
   quest.id = 0;
-  
   let sql = 'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer =?; \
   CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4, @answer)';
   mysqlConnection.query(
@@ -48,6 +47,20 @@ router.put('/', (req, res) => {
     }
   )
 })
+
+
+router.delete('/', (req, res) => {
+  const { id } = req.body;
+  mysqlConnection.query('SELECT * FROM quiz',
+  (err, rows, field)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else(console.log(err))
+  })
+})
+
+
 
 //similar to export default
 module.exports = router;
