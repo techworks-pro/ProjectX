@@ -17,8 +17,8 @@ router.post('/add', (req, res) => {
   quest.id = 0;
 
   let sql =
-    'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer =?; \
-  CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4, @answer)';
+    'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer =?; SET @Language =?;\
+  CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4, @answer ,@Language)';
   mysqlConnection.query(
     sql,
     [
@@ -28,7 +28,8 @@ router.post('/add', (req, res) => {
       quest.option2,
       quest.option3,
       quest.option4,
-      quest.answer
+      quest.answer,
+      quest.Language
     ],
     (err, rows, field) => {
       if (!err) res.send(rows);
@@ -43,8 +44,8 @@ router.put('/update', (req, res) => {
   let quest = req.body;
 
   let sql =
-    'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer=?; \
-  CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4, @answer)';
+    'SET @id = ?;SET @question = ?;SET @option1 = ?;SET @option2 = ?; SET @option3 = ?; SET @option4 = ?; SET @answer=?; SET @Language =?;\
+  CALL QuizAddOrEdit(@id, @question, @option1, @option2, @option3, @option4, @answer, @Language)';
   mysqlConnection.query(
     sql,
     [
@@ -54,7 +55,8 @@ router.put('/update', (req, res) => {
       quest.option2,
       quest.option3,
       quest.option4,
-      quest.answer
+      quest.answer,
+      quest.Language
     ],
     (err, rows, field) => {
       if (!err) res.send('Updated successfully');

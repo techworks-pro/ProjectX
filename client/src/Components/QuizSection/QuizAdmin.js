@@ -13,6 +13,7 @@ class QuizAdmin extends Component {
       Option3: '',
       Option4: '',
       Answer: '',
+      Language: '',
       pressViewButton: false,
       editing: false,
       editingIndex: null
@@ -21,7 +22,15 @@ class QuizAdmin extends Component {
 
   addQuiz = async event => {
     event.preventDefault();
-    const { Question, Option1, Option2, Option3, Option4, Answer } = this.state;
+    const {
+      Question,
+      Option1,
+      Option2,
+      Option3,
+      Option4,
+      Answer,
+      Language
+    } = this.state;
     try {
       await axios.post(`/api/quizs/add`, {
         id: 0,
@@ -30,7 +39,8 @@ class QuizAdmin extends Component {
         option2: Option2,
         option3: Option3,
         option4: Option4,
-        answer: Answer
+        answer: Answer,
+        Language: Language
       });
       this.setState({
         Question: '',
@@ -40,6 +50,7 @@ class QuizAdmin extends Component {
         Option4: '',
         Answer: '',
         editing: false,
+        Language: Language,
         editingIndex: null
       });
     } catch (error) {
@@ -61,6 +72,7 @@ class QuizAdmin extends Component {
       Option3,
       Option4,
       Answer,
+      Language,
       editingIndex
     } = this.state;
     const id = QuestionSet[editingIndex].id;
@@ -72,7 +84,8 @@ class QuizAdmin extends Component {
         option2: Option2,
         option3: Option3,
         option4: Option4,
-        answer: Answer
+        answer: Answer,
+        Language: Language
       });
       this.setState({
         Question: '',
@@ -81,6 +94,7 @@ class QuizAdmin extends Component {
         Option3: '',
         Option4: '',
         Answer: '',
+        Language: Language,
         editing: false,
         editingIndex: null
       });
@@ -121,7 +135,8 @@ class QuizAdmin extends Component {
       option2,
       option3,
       option4,
-      answer
+      answer,
+      Language
     } = currentQuestion;
     this.setState({
       Question: question,
@@ -130,6 +145,7 @@ class QuizAdmin extends Component {
       Option3: option3,
       Option4: option4,
       Answer: answer,
+      Language: Language,
       editingIndex: index,
       editing: true
     });
@@ -158,10 +174,14 @@ class QuizAdmin extends Component {
                 <br />
                 Answer:{el.answer}
                 <br />
+                Language:{el.Language}
+                <br />
                 {this.state.editing ? (
                   <button disabled>Edit This Quiz</button>
                 ) : (
-                  <button onClick={() => this.EditQuiz(index)}>Edit This Quiz</button>
+                  <button onClick={() => this.EditQuiz(index)}>
+                    Edit This Quiz
+                  </button>
                 )}
               </li>
             );
@@ -220,6 +240,15 @@ class QuizAdmin extends Component {
               type="text"
               onChange={e => this.setState({ Answer: e.target.value })}
               value={this.state.Answer}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="Language">Language</label>
+            <input
+              type="text"
+              onChange={e => this.setState({ Language: e.target.value })}
+              value={this.state.Language}
               className="form-control"
             />
           </div>
