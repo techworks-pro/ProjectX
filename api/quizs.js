@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 });
 
 //Add an new item without input QuizID
-router.post('/add', (req, res) => {
+router.post('/', (req, res) => {
   let quest = req.body;
   console.log(quest);
   quest.id = 0;
@@ -68,11 +68,13 @@ router.put('/', (req, res) => {
 
 //Delete an item by argument
 router.delete(`/:id`, (req, res) => {
+  console.log('delete id: ', req.params.id)
   mysqlConnection.query(
-    "DELETE FROM quiz WHERE id =?",
+    "DELETE FROM quiz WHERE id = ?",
     [req.params.id],
     (err, rows, field) => {
-      if (!err) console.log(`Deleted ${req.params.id} successfully`);
+      // if (!err) console.log(`Member with id ${req.params.id} deleted successfully`);
+      if (!err) res.json(rows);
       else console.log(err);
     }
   );
