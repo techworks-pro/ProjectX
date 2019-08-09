@@ -7,12 +7,19 @@ const Chapters = ({ chapterslist, groupQuestions }) => {
         type='button'
         onClick={() => groupQuestions('Javascript')}
         name='Javascript'
+        className="btn btn-success btn-block"
       >
         Javascript
       </button>
       <br />
-      <button type='button' onClick={() => groupQuestions('HTML')} name='HTML'>
+      <button type='button' onClick={() => groupQuestions('HTML')} name='HTML'
+      className="btn btn-success btn-block">
         HTML
+      </button>
+      <br />
+      <button type='button' onClick={() => groupQuestions('Java')} name='Java'
+        className="btn btn-success btn-block">
+        Java
       </button>
     </div>
   );
