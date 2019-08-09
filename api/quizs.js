@@ -38,7 +38,8 @@ router.post('/add', (req, res) => {
 });
 
 //Update an item by quizID.
-router.put('/', (req, res) => {
+router.put('/update', (req, res) => {
+  console.log(req.body);
   let quest = req.body;
 
   let sql =
