@@ -38,7 +38,7 @@ class Home extends Component {
           
           <div className="col-4">
             <div className="card border">
-            <div className="card-header">New Member</div>
+              <div className="card-header" style={{ backgroundColor: 'rgb(114, 168, 148)' }}>New Member</div>
               <div className="card-body">
                 <Signup name="signup" id="signup" action={this.newSignup} />
               </div>
@@ -48,7 +48,7 @@ class Home extends Component {
 
           <div className="col-4">
             <div className="card">
-              <div className="card-header">Welcome to this that page</div>
+              <div className="card-header" style={{backgroundColor: 'rgb(114, 168, 148)'}}>Welcome to this that page</div>
               <div className="card-body">
                 <Welcome/>
               </div>
@@ -57,7 +57,7 @@ class Home extends Component {
 
           <div className="col-4">
             <div className="card">
-                <div className="card-header">MEMBER SIGN IN</div>
+              <div className="card-header" style={{ backgroundColor: 'rgb(114, 168, 148)' }}>MEMBER SIGN IN</div>
                   <div className="card-body">
                     <Signin
                       name="signin"
